@@ -8,6 +8,10 @@ cp ../docker-compose.yml ./docker-compose.yml
 curl -L -o solidity-ubuntu-trusty.zip https://github.com/ethereum/solidity/releases/download/v0.4.24/solidity-ubuntu-trusty.zip
 unzip solidity-ubuntu-trusty.zip
 CWD=$(pwd)
+OLD_SOLC_PATH=$SOLC_PATH
+export SOLC_PATH=$CWD/solc
+# solidity-docgen command
+export SOLC_PATH=$OLD_SOLC_PATH
 
 cd $(pwd)/contracts
 #ls
@@ -49,7 +53,7 @@ echo "">truffle.js
 npm install || true
 npm install --only=dev || true
 npm install bignumber.js --save || true
-npm install solidity-coverage --save || true
+npm install -g solidity-docgen || true
 
 
 nodename=$(docker ps -a| grep validator-0_1 | awk '{print $1}')
@@ -57,12 +61,19 @@ ipaddr=$(docker inspect --format "{{ .NetworkSettings.Networks.app_net.IPAddress
 
 echo "npm test"
 sed -i 's/localhost/'"$ipaddr"'/g' setup.js
-
 sed -i 's/mocha protocol http/mocha --reporter=xunit/g' package.json
 sed -i 's/\.\/test/\.\/test>api-test-reports\.xml/g' package.json
 
 npm test ||true
 
 sed -i '/Mocha Tests/,$!d' api-test-reports.xml
+sed -i '/\/testsuite/,$d' api-test-reports.xml
+
+echo '</testsuite>' >> api-test-reports.xml
+
+#echo "Generating solidity docgen"
+
+#mkdir -p docs
+#solidity-docgen $(pwd) $(pwd)/contracts $(pwd)/docs || true
 
 echo "Process completed"
