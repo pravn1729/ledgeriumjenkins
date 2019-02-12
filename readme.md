@@ -49,11 +49,15 @@ docker-compose –version
 
 Reference: 
 
-```https://www.digitalocean.com/community/tutorials/how-to-install-docker-compose-on-ubuntu-16-04```
+```
+https://www.digitalocean.com/community/tutorials/how-to-install-docker-compose-on-ubuntu-16-04
+```
 
 **Run and Setup Jenkins docker**
 
-```docker run -d --name ledgeriumjenkins -p 8080:8080 -p 50000:50000 -v ~/jenkinshome jenkins/jenkins:lts```
+```
+docker run -d --name ledgeriumjenkins -p 8080:8080 -p 50000:50000 -v ~/jenkinshome jenkins/jenkins:lts
+```
 
 After running above command, set up docker in docker configuration as shown below for executing other dockers(mythril and oyente)
 
@@ -71,6 +75,19 @@ Scripts are available at
 
 https://github.com/ledgerium/ledgeriumcicd
 
-Reference:
+**contract_audit_mythril**
+
+This script is used to run each contract file e.g. AdminSetValidator.sol and SimpleSetValidator.sol against the Mythril which is an open source Ethereum smart contract and dApp (decentralized app) security analysis tool. It sends the email with the link of the static report, available on Jenkins system to dev@ledgerium.net
+
+**contract_audit_oyente**
+
+This script is used to run each contract file e.g. AdminSetValidator.sol and SimpleSetValidator.sol against the Oyente which is another open source static smart contract security analysis tool. It sends the email with the link of the static report, available on Jenkins system to dev@ledgerium.net
+
+**contract_soliditycoverage**
+
+This script is used to run mocha tests on AdminSetValidator.sol and SimpleSetValidator.sol. Also, it will have integration with solidity doc-gen package.
+
+
+**Reference:**
 
 https://medium.com/@gustavo.guss/quick-tutorial-of-jenkins-b99d5f5889f2

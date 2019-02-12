@@ -1,7 +1,8 @@
-docker rm mythril || true
+# Removing any existing mythril container
+docker rm -f mythril || true
 cd $(pwd)/contracts
-#ls
 chmod +777 *
+# Replacing 0.5.1 compiler version to 0.5.0 for each file as the mythril docker supports 0.5.0
 for file in *; do 
     if [ -f "$file" ]; then 
         echo "$file" 
@@ -10,6 +11,9 @@ for file in *; do
     fi 
 done
         
+# Looping each file from jenkins workspace and executing the mythril docker pointing to the file present in hostmachine jenkinshome and mythril docker is removed.
+# when docker command is executed from jenkins, it tries to look for the file paths(volume path here) present in host machine.
+
 for file in *; do 
     if [ -f "$file" ]; then 
         echo "$file" 
@@ -17,7 +21,7 @@ for file in *; do
         
         docker logs mythril || true
         
-        docker rm mythril || true
+        docker rm -f mythril || true
     fi 
 done
 
