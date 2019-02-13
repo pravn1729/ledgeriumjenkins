@@ -1,22 +1,7 @@
 echo "Process initiated"
 
-mkdir -p genesis
-cp ../led_genesis.json ./genesis/led_genesis.json
-rm -rf docker-compose.yml
-cp ../docker-compose.yml ./docker-compose.yml
-
-curl -L -o solidity-ubuntu-trusty.zip https://github.com/ethereum/solidity/releases/download/v0.4.24/solidity-ubuntu-trusty.zip
-unzip solidity-ubuntu-trusty.zip
-CWD=$(pwd)
-OLD_SOLC_PATH=$SOLC_PATH
-export SOLC_PATH=$CWD/solc
-# solidity-docgen command
-export SOLC_PATH=$OLD_SOLC_PATH
-
 cd $(pwd)/contracts
-#ls
 chmod +777 *
-echo "" >../solcovlogs.txt
 for file in *; do 
     if [ -f "$file" ]; then 
         echo "$file" 
@@ -27,53 +12,39 @@ done
 cd ..
 
 # node setup
+# Cleaning up the docker setup
 docker volume prune -f || true
 
 docker network create -d bridge --subnet 172.16.239.0/24 --gateway 172.16.239.1 app_net || true
+docker network create -d bridge --subnet 172.19.240.0/24 --gateway 172.19.240.1 test_net || true
+
 docker-compose down || true
-
-
-docker stop $(docker ps -a | grep ledgeriumengineering| awk '{print $1}') || true
-docker stop $(docker ps -a | grep quay.io| awk '{print $1}') || true
-docker stop $(docker ps -a | grep quorumengineering| awk '{print $1}') || true
-docker stop $(docker ps -a | grep syneblock| awk '{print $1}') || true
-
-
-docker rm -f $(docker ps -a | grep ledgeriumengineering| awk '{print $1}') || true
-docker rm -f $(docker ps -a | grep quay.io| awk '{print $1}') || true
-docker rm -f $(docker ps -a | grep quorumengineering| awk '{print $1}') || true
-docker rm -f $(docker ps -a | grep syneblock| awk '{print $1}') || true
-
 
 docker-compose up -d || true
 
-echo "">truffle.js
-
+sed -i 's/version": "1.0/version": "1.0.0/g' package.json
 
 npm install || true
-npm install --only=dev || true
-npm install bignumber.js --save || true
-npm install -g solidity-docgen || true
 
+# replacing validator node ip in setup.js
 
 nodename=$(docker ps -a| grep validator-0_1 | awk '{print $1}')
-ipaddr=$(docker inspect --format "{{ .NetworkSettings.Networks.app_net.IPAddress }}" $nodename)
+ipaddr=$(docker inspect --format "{{ .NetworkSettings.Networks.test_net.IPAddress }}" $nodename)
+
+npm install --only=dev || true
+npm install bignumber.js --save || true
 
 echo "npm test"
 sed -i 's/localhost/'"$ipaddr"'/g' setup.js
 sed -i 's/mocha protocol http/mocha --reporter=xunit/g' package.json
 sed -i 's/\.\/test/\.\/test>api-test-reports\.xml/g' package.json
 
+# Running tests
 npm test ||true
 
 sed -i '/Mocha Tests/,$!d' api-test-reports.xml
 sed -i '/\/testsuite/,$d' api-test-reports.xml
 
 echo '</testsuite>' >> api-test-reports.xml
-
-#echo "Generating solidity docgen"
-
-#mkdir -p docs
-#solidity-docgen $(pwd) $(pwd)/contracts $(pwd)/docs || true
 
 echo "Process completed"

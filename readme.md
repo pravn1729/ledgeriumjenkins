@@ -20,9 +20,9 @@ Please refer to below link for configuring “Docker in Docker”.
 
 ```https://getintodevops.com/blog/the-simple-way-to-run-docker-in-docker-for-ci```
 
-Notes: Docker commands in the shell file expects the code snippet path of host file because of docker-in-docker configuration. The docker-compose.yaml genesis path is modified with host genesis paths and placed in **Jenkins home > workspace > {PROJECT}**. If there are any modifications in docker-compose.yaml, please make it dynamic or make sure this is changed in host machine.
+Notes: Docker commands in the shell file expects the code snippet path of host file because of docker-in-docker configuration. The **docker-compose.yaml** genesis path is modified with host genesis paths and placed in **Jenkins home > workspace > {PROJECT}**. If there are any modifications in **docker-compose.yaml**, please make it dynamic or make sure this is changed in host machine.
 
-Note: The **genesis.json** and **docker-compose.yml** files are present in **~/jenkinshome/workspace** under host machine. If there any changes to docker-compose.yml . please have a look at docker-compose.yml genesis path in the file located in  **~/jenkinshome/workspace** and replace the file with hostmachine genesis paths.
+Note: The **genesis.json** and **docker-compose.yml** files are present in **~/jenkinshome/workspace** under host machine. If there any changes to **docker-compose.yml** . please have a look at **docker-compose.yml** genesis path in the file located in  **~/jenkinshome/workspace** and replace the file with hostmachine genesis paths.
 
 **Steps to Setup CI/CD**
 
@@ -56,18 +56,18 @@ https://www.digitalocean.com/community/tutorials/how-to-install-docker-compose-o
 **Run and Setup Jenkins docker**
 
 ```
-docker run -d --name ledgeriumjenkins -p 8080:8080 -p 50000:50000 -v ~/jenkinshome jenkins/jenkins:lts
+docker run -d --name ledgeriumjenkins -p 8080:8080 -p 50000:50000 -v /var/run/docker.sock:/var/run/docker.sock -v ~/jenkinshome:/var/jenkins_home jenkins/jenkins:lts
 ```
 
 After running above command, set up docker in docker configuration as shown below for executing other dockers(mythril and oyente)
 
-Login into jenkins docker machine and setup docker in docker configuration. 
+Login into jenkins docker machine and setup docker in docker configuration following below link. 
 
 https://getintodevops.com/blog/the-simple-way-to-run-docker-in-docker-for-ci
 
 Following link will be used for setting up node and emails configurations for Jenkins
 
-http://125.254.27.14:28080
+http://10.8.8.119:28080
 
 Setup admin password(password can be viewed in docker logs) and users can be created in Jenkins. Mythril (**mythril/myth docker image**) and oyente (**qspprotocol/oyente-0.4.24 docker image**) dockers are used for security auditing which are configured in jenkin jobs. This scripts trigger docker commands of security audit tools and governance app tools.
 
@@ -83,7 +83,7 @@ This script is used to run each contract file e.g. AdminSetValidator.sol and Sim
 
 This script is used to run each contract file e.g. AdminSetValidator.sol and SimpleSetValidator.sol against the Oyente which is another open source static smart contract security analysis tool. It sends the email with the link of the static report, available on Jenkins system to dev@ledgerium.net
 
-**contract_soliditycoverage**
+**contract_testreport**
 
 This script is used to run mocha tests on AdminSetValidator.sol and SimpleSetValidator.sol. Also, it will have integration with solidity doc-gen package.
 
