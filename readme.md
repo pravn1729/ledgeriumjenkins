@@ -67,7 +67,7 @@ https://getintodevops.com/blog/the-simple-way-to-run-docker-in-docker-for-ci
 
 Following link will be used for setting up node and emails configurations for Jenkins
 
-http://10.8.8.119:28080
+http://125.254.27.14:28080
 
 Setup admin password(password can be viewed in docker logs) and users can be created in Jenkins. Mythril (**mythril/myth docker image**) and oyente (**qspprotocol/oyente-0.4.24 docker image**) dockers are used for security auditing which are configured in jenkin jobs. This scripts trigger docker commands of security audit tools and governance app tools.
 
