@@ -1,0 +1,20 @@
+version: '2.0'
+services:
+  jenkins:
+    container_name: ledgeriumjenkins
+    image: ledgeriumengineering/ledgeriumjenkins:v1.0
+    environment:
+      JAVA_OPTS: "-Djava.awt.headless=true"  
+      JAVA_OPTS: "-Djenkins.install.runSetupWizard=false" # Start jenkins unlocked  
+    ports:
+      - "50000:50000"
+      - "8080:8080"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ./jobs:/var/jenkins_home/jobs   
+    networks:
+      test_net:
+        ipv4_address: 172.19.240.141
+networks:
+  test_net:
+    external: true

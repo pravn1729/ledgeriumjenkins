@@ -1,0 +1,5 @@
+sudo apt-get install nano
+git clone https://github.com/openstack-infra/jenkins-job-builder.git
+sudo apt install python3-pip
+pip3 install --user jenkins-job-builder
+node and npm
