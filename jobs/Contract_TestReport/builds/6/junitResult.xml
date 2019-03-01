@@ -1,0 +1,588 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<result plugin="junit@1.27">
+  <suites>
+    <suite>
+      <file>/var/jenkins_home/jobs/Contract_TestReport/workspace/api-test-reports.xml</file>
+      <name>Mocha Tests</name>
+      <duration>176.501</duration>
+      <timestamp>Thu, 28 Feb 2019 11:40:28 GMT</timestamp>
+      <time>176.501</time>
+      <enclosingBlocks/>
+      <enclosingBlockNames/>
+      <cases>
+        <case>
+          <duration>0.048</duration>
+          <className>Admin Validator All Active Admins</className>
+          <testName>returns all active admins</testName>
+          <skipped>false</skipped>
+          <errorStackTrace>expected false to be true
+AssertionError: expected false to be true
+    at Context.it (test/testadminvalidatorset.js:30:39)
+    at &lt;anonymous&gt;
+    at process._tickCallback (internal/process/next_tick.js:189:7)</errorStackTrace>
+          <failedSince>4</failedSince>
+        </case>
+        <case>
+          <duration>0.005</duration>
+          <className>Admin Validator Add One Admin</className>
+          <testName>returns admin is inactive before adding as admin</testName>
+          <skipped>false</skipped>
+          <failedSince>0</failedSince>
+        </case>
+        <case>
+          <duration>0.025</duration>
+          <className>Admin Validator Add One Admin Proposal to Add Admin</className>
+          <testName>returns proposal not created before add admin proposal</testName>
+          <skipped>false</skipped>
+          <failedSince>0</failedSince>
+        </case>
+        <case>
+          <duration>0.01</duration>
+          <className>Admin Validator Add One Admin Proposal to Add Admin</className>
+          <testName>returns votes as [ 0, 0 ] before add admin proposal</testName>
+          <skipped>false</skipped>
+          <failedSince>0</failedSince>
+        </case>
+        <case>
+          <duration>6.042</duration>
+          <className>Admin Validator Add One Admin Proposal to Add Admin</className>
+          <testName>returns proposalToAddAdmin transaction as true</testName>
+          <skipped>false</skipped>
+          <failedSince>0</failedSince>
+        </case>
+        <case>
+          <duration>0.006</duration>
+          <className>Admin Validator Add One Admin Proposal to Add Admin</className>
+          <testName>returns proposal as add after add admin proposal</testName>
+          <skipped>false</skipped>
+          <failedSince>0</failedSince>
+        </case>
+        <case>
+          <duration>0.008</duration>
+          <className>Admin Validator Add One Admin Proposal to Add Admin</className>
+          <testName>returns votes as [ 1, 0 ] after add admin proposal</testName>
+          <skipped>false</skipped>
+          <failedSince>0</failedSince>
+        </case>
+        <case>
+          <duration>10.039</duration>
+          <className>Admin Validator Add One Admin Vote against Add Admin</className>
+          <testName>returns voteAgainstAddingAdmin transaction status as true</testName>
+          <skipped>false</skipped>
+          <failedSince>0</failedSince>
+        </case>
+        <case>
+          <duration>0.008</duration>
+          <className>Admin Validator Add One Admin Vote against Add Admin</className>
+          <testName>returns proposal as add after voting against add admin proposal</testName>
+          <skipped>false</skipped>
+          <failedSince>0</failedSince>
+        </case>
+        <case>
+          <duration>0.005</duration>
+          <className>Admin Validator Add One Admin Vote against Add Admin</className>
+          <testName>returns votes as [ 1, 1 ] after voting against add admin proposal</testName>
+          <skipped>false</skipped>
+          <failedSince>0</failedSince>
+        </case>
+        <case>
+          <duration>10.058</duration>
+          <className>Admin Validator Add One Admin Voting for Add admin</className>
+          <testName>returns voting for</testName>
+          <skipped>false</skipped>
+          <failedSince>0</failedSince>
+        </case>
+        <case>
+          <duration>0.006</duration>
+          <className>Admin Validator Add One Admin Voting for Add admin</className>
+          <testName>returns proposal not created after voting for add admin proposal</testName>
+          <skipped>false</skipped>
+          <failedSince>0</failedSince>
+        </case>
+        <case>
+          <duration>0.007</duration>
+          <className>Admin Validator Add One Admin Voting for Add admin</className>
+          <testName>returns votes as [ 0, 0 ] after voting for add admin proposal</testName>
+          <skipped>false</skipped>
+          <failedSince>0</failedSince>
+        </case>
+        <case>
+          <duration>0.005</duration>
+          <className>Admin Validator Add One Admin After admin is added</className>
+          <testName>returns admin added</testName>
+          <skipped>false</skipped>
+          <failedSince>0</failedSince>
+        </case>
+        <case>
+          <duration>0.007</duration>
+          <className>Admin Validator Add One Admin After admin is added</className>
+          <testName>returns admin count</testName>
+          <skipped>false</skipped>
+          <failedSince>0</failedSince>
+        </case>
+        <case>
+          <duration>0.005</duration>
+          <className>Admin Validator Add One Admin After admin is added</className>
+          <testName>returns active admin count</testName>
+          <skipped>false</skipped>
+          <failedSince>0</failedSince>
+        </case>
+        <case>
+          <duration>0.004</duration>
+          <className>Admin Validator Remove Admin</className>
+          <testName>returns admin is active before remove admin</testName>
+          <skipped>false</skipped>
+          <failedSince>0</failedSince>
+        </case>
+        <case>
+          <duration>0.005</duration>
+          <className>Admin Validator Remove Admin Proposal to remove admin</className>
+          <testName>returns proposal not created before remove admin proposal</testName>
+          <skipped>false</skipped>
+          <failedSince>0</failedSince>
+        </case>
+        <case>
+          <duration>0.02</duration>
+          <className>Admin Validator Remove Admin Proposal to remove admin</className>
+          <testName>returns votes as [ 0, 0 ] before remove admin proposal</testName>
+          <skipped>false</skipped>
+          <failedSince>0</failedSince>
+        </case>
+        <case>
+          <duration>10.05</duration>
+          <className>Admin Validator Remove Admin Proposal to remove admin</className>
+          <testName>returns proposalToRemoveAdmin transaction status as true</testName>
+          <skipped>false</skipped>
+          <failedSince>0</failedSince>
+        </case>
+        <case>
+          <duration>0.005</duration>
+          <className>Admin Validator Remove Admin Proposal to remove admin</className>
+          <testName>returns proposal as remove after remove admin proposal</testName>
+          <skipped>false</skipped>
+          <failedSince>0</failedSince>
+        </case>
+        <case>
+          <duration>0.005</duration>
+          <className>Admin Validator Remove Admin Proposal to remove admin</className>
+          <testName>returns votes as [ 1, 0 ] after remove admin proposal</testName>
+          <skipped>false</skipped>
+          <failedSince>0</failedSince>
+        </case>
+        <case>
+          <duration>10.051</duration>
+          <className>Admin Validator Remove Admin Proposal to remove admin Vote against Remove Admin</className>
+          <testName>returns voteAgainstRemovingAdmin transaction status as true</testName>
+          <skipped>false</skipped>
+          <failedSince>0</failedSince>
+        </case>
+        <case>
+          <duration>0.005</duration>
+          <className>Admin Validator Remove Admin Proposal to remove admin Vote against Remove Admin</className>
+          <testName>returns proposal as remove after voting against remove admin proposal</testName>
+          <skipped>false</skipped>
+          <failedSince>0</failedSince>
+        </case>
+        <case>
+          <duration>0.005</duration>
+          <className>Admin Validator Remove Admin Proposal to remove admin Vote against Remove Admin</className>
+          <testName>returns votes as [ 1, 1 ] after voting against remove admin proposal</testName>
+          <skipped>false</skipped>
+          <failedSince>0</failedSince>
+        </case>
+        <case>
+          <duration>20.098</duration>
+          <className>Admin Validator Remove Admin Proposal to remove admin Voting for Remove admin</className>
+          <testName>returns voting for</testName>
+          <skipped>false</skipped>
+          <failedSince>0</failedSince>
+        </case>
+        <case>
+          <duration>0.006</duration>
+          <className>Admin Validator Remove Admin Proposal to remove admin Voting for Remove admin</className>
+          <testName>returns proposal not created after voting for remove admin proposal</testName>
+          <skipped>false</skipped>
+          <failedSince>0</failedSince>
+        </case>
+        <case>
+          <duration>0.006</duration>
+          <className>Admin Validator Remove Admin Proposal to remove admin Voting for Remove admin</className>
+          <testName>returns votes as [ 0, 0 ] after voting for remove admin proposal</testName>
+          <skipped>false</skipped>
+          <failedSince>0</failedSince>
+        </case>
+        <case>
+          <duration>0.007</duration>
+          <className>Admin Validator Remove Admin After admin is removed</className>
+          <testName>returns admin removed</testName>
+          <skipped>false</skipped>
+          <failedSince>0</failedSince>
+        </case>
+        <case>
+          <duration>0.005</duration>
+          <className>Admin Validator Remove Admin After admin is removed</className>
+          <testName>returns admin count</testName>
+          <skipped>false</skipped>
+          <failedSince>0</failedSince>
+        </case>
+        <case>
+          <duration>0.005</duration>
+          <className>Admin Validator Remove Admin After admin is removed</className>
+          <testName>returns admin count</testName>
+          <skipped>false</skipped>
+          <failedSince>0</failedSince>
+        </case>
+        <case>
+          <duration>0.006</duration>
+          <className>Admin Validator Clear Proposal Check proposal and check votes before clearProposal</className>
+          <testName>returns proposal not created</testName>
+          <skipped>false</skipped>
+          <failedSince>0</failedSince>
+        </case>
+        <case>
+          <duration>0.005</duration>
+          <className>Admin Validator Clear Proposal Check proposal and check votes before clearProposal</className>
+          <testName>returns votes as [ 0, 0 ]</testName>
+          <skipped>false</skipped>
+          <failedSince>0</failedSince>
+        </case>
+        <case>
+          <duration>10.05</duration>
+          <className>Admin Validator Clear Proposal Add Admin Proposal</className>
+          <testName>returns add admin proposal</testName>
+          <skipped>false</skipped>
+          <failedSince>0</failedSince>
+        </case>
+        <case>
+          <duration>0.005</duration>
+          <className>Admin Validator Clear Proposal Add Admin Proposal</className>
+          <testName>returns proposal as add after add admin proposal</testName>
+          <skipped>false</skipped>
+          <failedSince>0</failedSince>
+        </case>
+        <case>
+          <duration>0.005</duration>
+          <className>Admin Validator Clear Proposal Add Admin Proposal</className>
+          <testName>returns votes as [ 1, 0 ] after add admin proposal</testName>
+          <skipped>false</skipped>
+          <failedSince>0</failedSince>
+        </case>
+        <case>
+          <duration>10.045</duration>
+          <className>Admin Validator Clear Proposal Clear Add Admin Proposal</className>
+          <testName>returns clear proposal</testName>
+          <skipped>false</skipped>
+          <failedSince>0</failedSince>
+        </case>
+        <case>
+          <duration>0.008</duration>
+          <className>Admin Validator Clear Proposal Clear Add Admin Proposal</className>
+          <testName>returns proposal not created after clear proposal</testName>
+          <skipped>false</skipped>
+          <failedSince>0</failedSince>
+        </case>
+        <case>
+          <duration>0.011</duration>
+          <className>Admin Validator Clear Proposal Clear Add Admin Proposal</className>
+          <testName>returns votes as [ 0, 0 ] after clear proposal</testName>
+          <skipped>false</skipped>
+          <failedSince>0</failedSince>
+        </case>
+        <case>
+          <duration>0.023</duration>
+          <className>Admin Validator All Active Admins again</className>
+          <testName>returns 3 active admins and 1 non active admins</testName>
+          <skipped>false</skipped>
+          <failedSince>0</failedSince>
+        </case>
+        <case>
+          <duration>0.03</duration>
+          <className>Simple Validator All Active Validators</className>
+          <testName>returns all active validators</testName>
+          <skipped>false</skipped>
+          <errorStackTrace>expected false to be true
+AssertionError: expected false to be true
+    at Context.it (test/testsimplevalidatorset.js:31:39)
+    at &lt;anonymous&gt;
+    at process._tickCallback (internal/process/next_tick.js:189:7)</errorStackTrace>
+          <failedSince>4</failedSince>
+        </case>
+        <case>
+          <duration>0.005</duration>
+          <className>Simple Validator Add Validator for Admin</className>
+          <testName>returns validator is inactive before adding as validator</testName>
+          <skipped>false</skipped>
+          <failedSince>0</failedSince>
+        </case>
+        <case>
+          <duration>0.005</duration>
+          <className>Simple Validator Add Validator for Admin Proposal to Add Validator</className>
+          <testName>returns proposal not created before add validator proposal</testName>
+          <skipped>false</skipped>
+          <failedSince>0</failedSince>
+        </case>
+        <case>
+          <duration>0.005</duration>
+          <className>Simple Validator Add Validator for Admin Proposal to Add Validator</className>
+          <testName>returns votes as [ 0, 0 ] before add validator proposal</testName>
+          <skipped>false</skipped>
+          <failedSince>0</failedSince>
+        </case>
+        <case>
+          <duration>9.055</duration>
+          <className>Simple Validator Add Validator for Admin Proposal to Add Validator</className>
+          <testName>returns proposalToAddValidator transaction as true</testName>
+          <skipped>false</skipped>
+          <failedSince>0</failedSince>
+        </case>
+        <case>
+          <duration>0.007</duration>
+          <className>Simple Validator Add Validator for Admin Proposal to Add Validator</className>
+          <testName>returns proposal as add after add validator proposal</testName>
+          <skipped>false</skipped>
+          <failedSince>0</failedSince>
+        </case>
+        <case>
+          <duration>0.007</duration>
+          <className>Simple Validator Add Validator for Admin Proposal to Add Validator</className>
+          <testName>returns votes as [ 1, 0 ] after add validator proposal</testName>
+          <skipped>false</skipped>
+          <failedSince>0</failedSince>
+        </case>
+        <case>
+          <duration>10.049</duration>
+          <className>Simple Validator Add Validator for Admin Vote against Add Validator</className>
+          <testName>returns voteAgainstAddingValidator transaction status as true</testName>
+          <skipped>false</skipped>
+          <failedSince>0</failedSince>
+        </case>
+        <case>
+          <duration>0.005</duration>
+          <className>Simple Validator Add Validator for Admin Vote against Add Validator</className>
+          <testName>returns proposal as add after voting against add validator proposal</testName>
+          <skipped>false</skipped>
+          <failedSince>0</failedSince>
+        </case>
+        <case>
+          <duration>0.005</duration>
+          <className>Simple Validator Add Validator for Admin Vote against Add Validator</className>
+          <testName>returns votes as [ 1, 1 ] after voting against add validator proposal</testName>
+          <skipped>false</skipped>
+          <failedSince>0</failedSince>
+        </case>
+        <case>
+          <duration>10.04</duration>
+          <className>Simple Validator Add Validator for Admin Voting for Add Validator</className>
+          <testName>returns voting for</testName>
+          <skipped>false</skipped>
+          <failedSince>0</failedSince>
+        </case>
+        <case>
+          <duration>0.007</duration>
+          <className>Simple Validator Add Validator for Admin Voting for Add Validator</className>
+          <testName>returns proposal not created after voting for add validator proposal</testName>
+          <skipped>false</skipped>
+          <failedSince>0</failedSince>
+        </case>
+        <case>
+          <duration>0.005</duration>
+          <className>Simple Validator Add Validator for Admin Voting for Add Validator</className>
+          <testName>returns votes as [ 0, 0 ] after voting for add validator proposal</testName>
+          <skipped>false</skipped>
+          <failedSince>0</failedSince>
+        </case>
+        <case>
+          <duration>0.006</duration>
+          <className>Simple Validator Add Validator for Admin After validator is added</className>
+          <testName>returns validator added</testName>
+          <skipped>false</skipped>
+          <failedSince>0</failedSince>
+        </case>
+        <case>
+          <duration>0.005</duration>
+          <className>Simple Validator Add Validator for Admin After validator is added</className>
+          <testName>returns validator count</testName>
+          <skipped>false</skipped>
+          <failedSince>0</failedSince>
+        </case>
+        <case>
+          <duration>0.005</duration>
+          <className>Simple Validator Add Validator for Admin After validator is added</className>
+          <testName>returns active validator count</testName>
+          <skipped>false</skipped>
+          <failedSince>0</failedSince>
+        </case>
+        <case>
+          <duration>0.005</duration>
+          <className>Simple Validator Remove Validator</className>
+          <testName>returns validator is active before remove validator</testName>
+          <skipped>false</skipped>
+          <failedSince>0</failedSince>
+        </case>
+        <case>
+          <duration>0.005</duration>
+          <className>Simple Validator Remove Validator Proposal to remove validator</className>
+          <testName>returns proposal not created before remove validator proposal</testName>
+          <skipped>false</skipped>
+          <failedSince>0</failedSince>
+        </case>
+        <case>
+          <duration>0.004</duration>
+          <className>Simple Validator Remove Validator Proposal to remove validator</className>
+          <testName>returns votes as [ 0, 0 ] before remove validator proposal</testName>
+          <skipped>false</skipped>
+          <failedSince>0</failedSince>
+        </case>
+        <case>
+          <duration>10.049</duration>
+          <className>Simple Validator Remove Validator Proposal to remove validator</className>
+          <testName>returns proposalToRemoveValidator transaction status as true</testName>
+          <skipped>false</skipped>
+          <failedSince>0</failedSince>
+        </case>
+        <case>
+          <duration>0.006</duration>
+          <className>Simple Validator Remove Validator Proposal to remove validator</className>
+          <testName>returns proposal as remove after remove validator proposal</testName>
+          <skipped>false</skipped>
+          <failedSince>0</failedSince>
+        </case>
+        <case>
+          <duration>0.005</duration>
+          <className>Simple Validator Remove Validator Proposal to remove validator</className>
+          <testName>returns votes as [ 1, 0 ] after remove validator proposal</testName>
+          <skipped>false</skipped>
+          <failedSince>0</failedSince>
+        </case>
+        <case>
+          <duration>10.05</duration>
+          <className>Simple Validator Remove Validator Proposal to remove validator Vote against Remove Validator</className>
+          <testName>returns voteAgainstRemovingValidator transaction status as true</testName>
+          <skipped>false</skipped>
+          <failedSince>0</failedSince>
+        </case>
+        <case>
+          <duration>0.006</duration>
+          <className>Simple Validator Remove Validator Proposal to remove validator Vote against Remove Validator</className>
+          <testName>returns proposal as remove after voting against remove validator proposal</testName>
+          <skipped>false</skipped>
+          <failedSince>0</failedSince>
+        </case>
+        <case>
+          <duration>0.005</duration>
+          <className>Simple Validator Remove Validator Proposal to remove validator Vote against Remove Validator</className>
+          <testName>returns votes as [ 1, 1 ] after voting against remove validator proposal</testName>
+          <skipped>false</skipped>
+          <failedSince>0</failedSince>
+        </case>
+        <case>
+          <duration>20.087</duration>
+          <className>Simple Validator Remove Validator Proposal to remove validator Voting for Remove Validator</className>
+          <testName>returns voting for</testName>
+          <skipped>false</skipped>
+          <failedSince>0</failedSince>
+        </case>
+        <case>
+          <duration>0.006</duration>
+          <className>Simple Validator Remove Validator Proposal to remove validator Voting for Remove Validator</className>
+          <testName>returns proposal not created after voting for remove validator proposal</testName>
+          <skipped>false</skipped>
+          <failedSince>0</failedSince>
+        </case>
+        <case>
+          <duration>0.006</duration>
+          <className>Simple Validator Remove Validator Proposal to remove validator Voting for Remove Validator</className>
+          <testName>returns votes as [ 0, 0 ] after voting for remove validator proposal</testName>
+          <skipped>false</skipped>
+          <failedSince>0</failedSince>
+        </case>
+        <case>
+          <duration>0.004</duration>
+          <className>Simple Validator Remove Validator After Validator is removed</className>
+          <testName>returns validator removed</testName>
+          <skipped>false</skipped>
+          <failedSince>0</failedSince>
+        </case>
+        <case>
+          <duration>0.004</duration>
+          <className>Simple Validator Remove Validator After Validator is removed</className>
+          <testName>returns validator count</testName>
+          <skipped>false</skipped>
+          <failedSince>0</failedSince>
+        </case>
+        <case>
+          <duration>0.006</duration>
+          <className>Simple Validator Remove Validator After Validator is removed</className>
+          <testName>returns active validator count</testName>
+          <skipped>false</skipped>
+          <failedSince>0</failedSince>
+        </case>
+        <case>
+          <duration>0.004</duration>
+          <className>Simple Validator Clear Proposal Check proposal and check votes before clearProposal</className>
+          <testName>returns proposal not created</testName>
+          <skipped>false</skipped>
+          <failedSince>0</failedSince>
+        </case>
+        <case>
+          <duration>0.004</duration>
+          <className>Simple Validator Clear Proposal Check proposal and check votes before clearProposal</className>
+          <testName>returns votes as [ 0, 0 ]</testName>
+          <skipped>false</skipped>
+          <failedSince>0</failedSince>
+        </case>
+        <case>
+          <duration>10.044</duration>
+          <className>Simple Validator Clear Proposal Add Validator Proposal</className>
+          <testName>returns add validator proposal</testName>
+          <skipped>false</skipped>
+          <failedSince>0</failedSince>
+        </case>
+        <case>
+          <duration>0.007</duration>
+          <className>Simple Validator Clear Proposal Add Validator Proposal</className>
+          <testName>returns proposal as add after add validator proposal</testName>
+          <skipped>false</skipped>
+          <failedSince>0</failedSince>
+        </case>
+        <case>
+          <duration>0.005</duration>
+          <className>Simple Validator Clear Proposal Add Validator Proposal</className>
+          <testName>returns votes as [ 1, 0 ] after add validator proposal</testName>
+          <skipped>false</skipped>
+          <failedSince>0</failedSince>
+        </case>
+        <case>
+          <duration>10.042</duration>
+          <className>Simple Validator Clear Proposal Clear Add Validator Proposal</className>
+          <testName>returns clear proposal</testName>
+          <skipped>false</skipped>
+          <failedSince>0</failedSince>
+        </case>
+        <case>
+          <duration>0.006</duration>
+          <className>Simple Validator Clear Proposal Clear Add Validator Proposal</className>
+          <testName>returns proposal not created after clear proposal</testName>
+          <skipped>false</skipped>
+          <failedSince>0</failedSince>
+        </case>
+        <case>
+          <duration>0.005</duration>
+          <className>Simple Validator Clear Proposal Clear Add Validator Proposal</className>
+          <testName>returns votes as [ 0, 0 ] after clear proposal</testName>
+          <skipped>false</skipped>
+          <failedSince>0</failedSince>
+        </case>
+        <case>
+          <duration>0.02</duration>
+          <className>Simple Validator All Active Validators again</className>
+          <testName>returns 3 active validators and 1 non active validator</testName>
+          <skipped>false</skipped>
+          <failedSince>0</failedSince>
+        </case>
+      </cases>
+    </suite>
+  </suites>
+  <duration>176.501</duration>
+  <keepLongStdio>false</keepLongStdio>
+</result>

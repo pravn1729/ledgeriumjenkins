@@ -1,0 +1,44 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<hudson.plugins.emailext.ExtendedEmailPublisherDescriptor plugin="email-ext@2.63">
+  <mailAccount>
+    <smtpHost>smtp.gmail.com</smtpHost>
+    <smtpPort>465</smtpPort>
+    <smtpUsername>notification@ledgerium.net</smtpUsername>
+    <smtpPassword>{AQAAABAAAAAwg/1FaCDhq9t9CNg6hH6V6zfHoKgW2ZjiN8gJpkPIkx7aJaa/QALqbSrNDX99RZxOH9y5F6n4mhV174iUpll4Jg==}</smtpPassword>
+    <useSsl>true</useSsl>
+  </mailAccount>
+  <addAccounts/>
+  <charset>UTF-8</charset>
+  <defaultContentType>text/plain</defaultContentType>
+  <defaultSubject>$PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS!</defaultSubject>
+  <defaultBody>$PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS:&#xd;
+&#xd;
+Check console output at $BUILD_URL to view the results.</defaultBody>
+  <defaultPresendScript></defaultPresendScript>
+  <defaultPostsendScript></defaultPostsendScript>
+  <defaultClasspath/>
+  <defaultTriggerIds>
+    <string>hudson.plugins.emailext.plugins.trigger.FailureTrigger</string>
+  </defaultTriggerIds>
+  <maxAttachmentSize>-1</maxAttachmentSize>
+  <recipientList></recipientList>
+  <defaultReplyTo></defaultReplyTo>
+  <allowedDomains></allowedDomains>
+  <excludedCommitters></excludedCommitters>
+  <overrideGlobalSettings>true</overrideGlobalSettings>
+  <precedenceBulk>false</precedenceBulk>
+  <debugMode>false</debugMode>
+  <requireAdminForTemplateTesting>false</requireAdminForTemplateTesting>
+  <enableWatching>false</enableWatching>
+  <enableAllowUnregistered>false</enableAllowUnregistered>
+ledgerappuser@mel-app03-2:~/jenkinshome$
+ledgerappuser@mel-app03-2:~/jenkinshome$ cat hudson.tasks.Mailer.xml
+<?xml version='1.1' encoding='UTF-8'?>
+<hudson.tasks.Mailer_-DescriptorImpl plugin="mailer@1.23">
+  <smtpAuthUsername>notification@ledgerium.net</smtpAuthUsername>
+  <smtpAuthPassword>{AQAAABAAAAAwN52uBPaZJRXqnf98Fl77Ho+IS4ISsWVd2Z6fEOqW28EVNzoNbb2EcQBgv/Ix8N3HVRei65R5f1Ye+CMhkP3DYw==}</smtpAuthPassword>
+  <smtpHost>smtp.gmail.com</smtpHost>
+  <useSsl>true</useSsl>
+  <smtpPort>465</smtpPort>
+  <charset>UTF-8</charset>
+</hudson.tasks.Mailer_-DescriptorImpl>

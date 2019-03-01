@@ -1,0 +1,233 @@
+Started by user [8mha:////4DYGRZ503hbHGM4YsPrIVUTcZPIQRri4/jB4qsrOBTdrAAAAlx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzWEgZu/dLi1CL9xJTczDwAj6GcLcAAAAA=[0madmin
+ln builds/lastSuccessfulBuild /var/jenkins_home/jobs/Contract_Audit_Oyente/lastSuccessful failed
+java.nio.file.DirectoryNotEmptyException: /var/jenkins_home/jobs/Contract_Audit_Oyente/lastSuccessful
+	at sun.nio.fs.UnixFileSystemProvider.implDelete(UnixFileSystemProvider.java:242)
+	at sun.nio.fs.AbstractFileSystemProvider.deleteIfExists(AbstractFileSystemProvider.java:108)
+	at java.nio.file.Files.deleteIfExists(Files.java:1165)
+	at hudson.Util.createSymlink(Util.java:1351)
+	at hudson.model.Run.createSymlink(Run.java:1933)
+	at hudson.model.Run.updateSymlinks(Run.java:1914)
+	at hudson.model.Run.execute(Run.java:1792)
+	at hudson.model.FreeStyleBuild.run(FreeStyleBuild.java:43)
+	at hudson.model.ResourceController.execute(ResourceController.java:97)
+	at hudson.model.Executor.run(Executor.java:429)
+ln builds/lastStableBuild /var/jenkins_home/jobs/Contract_Audit_Oyente/lastStable failed
+java.nio.file.DirectoryNotEmptyException: /var/jenkins_home/jobs/Contract_Audit_Oyente/lastStable
+	at sun.nio.fs.UnixFileSystemProvider.implDelete(UnixFileSystemProvider.java:242)
+	at sun.nio.fs.AbstractFileSystemProvider.deleteIfExists(AbstractFileSystemProvider.java:108)
+	at java.nio.file.Files.deleteIfExists(Files.java:1165)
+	at hudson.Util.createSymlink(Util.java:1351)
+	at hudson.model.Run.createSymlink(Run.java:1933)
+	at hudson.model.Run.updateSymlinks(Run.java:1915)
+	at hudson.model.Run.execute(Run.java:1792)
+	at hudson.model.FreeStyleBuild.run(FreeStyleBuild.java:43)
+	at hudson.model.ResourceController.execute(ResourceController.java:97)
+	at hudson.model.Executor.run(Executor.java:429)
+Building in workspace /var/jenkins_home/jobs/Contract_Audit_Oyente/workspace
+ > git rev-parse --is-inside-work-tree # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url https://github.com/ledgerium/governanceapp.git # timeout=10
+Fetching upstream changes from https://github.com/ledgerium/governanceapp.git
+ > git --version # timeout=10
+ > git fetch --tags --progress https://github.com/ledgerium/governanceapp.git +refs/heads/*:refs/remotes/origin/*
+ > git rev-parse refs/remotes/origin/master^{commit} # timeout=10
+ > git rev-parse refs/remotes/origin/origin/master^{commit} # timeout=10
+Checking out Revision 8b1a3bbc7d97ff7716b79afba62b5dd51fd05aa4 (refs/remotes/origin/master)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 8b1a3bbc7d97ff7716b79afba62b5dd51fd05aa4
+ > git rev-list --no-walk 8b1a3bbc7d97ff7716b79afba62b5dd51fd05aa4 # timeout=10
+No emails were triggered.
+[workspace] $ /bin/sh -xe /tmp/jenkins5776478498934021197.sh
++ docker rm -f oyente
+Error: No such container: oyente
++ true
++ pwd
++ cd /var/jenkins_home/jobs/Contract_Audit_Oyente/workspace/contracts
++ chmod +777 AdminValidatorSet.sol Ownable.sol SafeMath.sol SimpleValidatorSet.sol Voteable.sol
++ echo 
++ [ -f AdminValidatorSet.sol ]
++ echo AdminValidatorSet.sol
+AdminValidatorSet.sol
++ sed -i s/\^//g AdminValidatorSet.sol
++ sed -i s/0.5.1/0.4.24/g AdminValidatorSet.sol
++ [ -f Ownable.sol ]
++ echo Ownable.sol
+Ownable.sol
++ sed -i s/\^//g Ownable.sol
++ sed -i s/0.5.1/0.4.24/g Ownable.sol
++ [ -f SafeMath.sol ]
++ echo SafeMath.sol
+SafeMath.sol
++ sed -i s/\^//g SafeMath.sol
++ sed -i s/0.5.1/0.4.24/g SafeMath.sol
++ [ -f SimpleValidatorSet.sol ]
++ echo SimpleValidatorSet.sol
+SimpleValidatorSet.sol
++ sed -i s/\^//g SimpleValidatorSet.sol
++ sed -i s/0.5.1/0.4.24/g SimpleValidatorSet.sol
++ [ -f Voteable.sol ]
++ echo Voteable.sol
+Voteable.sol
++ sed -i s/\^//g Voteable.sol
++ sed -i s/0.5.1/0.4.24/g Voteable.sol
++ docker run -d -it --name oyente -v /Users/rahulgolash/Rahul/Ledgerium/CoreLedgerium/ledgeriumjenkins/jobs/Contract_Audit_Oyente/workspace/contracts:/tmp qspprotocol/oyente-0.4.24
+Unable to find image 'qspprotocol/oyente-0.4.24:latest' locally
+latest: Pulling from qspprotocol/oyente-0.4.24
+124c757242f8: Pulling fs layer
+2ebc019eb4e2: Pulling fs layer
+dac0825f7ffb: Pulling fs layer
+82b0bb65d1bf: Pulling fs layer
+ef3b655c7f88: Pulling fs layer
+668aef055f5c: Pulling fs layer
+84b373be356b: Pulling fs layer
+ab9457f508c2: Pulling fs layer
+7c489deacb42: Pulling fs layer
+01a73db041ee: Pulling fs layer
+11b80df91015: Pulling fs layer
+5922cd913d96: Pulling fs layer
+197015bdd31b: Pulling fs layer
+f28a0c754c99: Pulling fs layer
+986a0416f817: Pulling fs layer
+c7419e461cac: Pulling fs layer
+15ff5d045454: Pulling fs layer
+05570a8690e6: Pulling fs layer
+872e2c604ae6: Pulling fs layer
+3e786c6242d2: Pulling fs layer
+13738903ddba: Pulling fs layer
+e1885a4a6316: Pulling fs layer
+96ea4c0b7279: Pulling fs layer
+24ccb49a4649: Pulling fs layer
+8be477f3ab55: Pulling fs layer
+caa6dcdc5475: Pulling fs layer
+82b0bb65d1bf: Waiting
+ef3b655c7f88: Waiting
+668aef055f5c: Waiting
+84b373be356b: Waiting
+ab9457f508c2: Waiting
+7c489deacb42: Waiting
+01a73db041ee: Waiting
+11b80df91015: Waiting
+5922cd913d96: Waiting
+197015bdd31b: Waiting
+f28a0c754c99: Waiting
+986a0416f817: Waiting
+c7419e461cac: Waiting
+15ff5d045454: Waiting
+05570a8690e6: Waiting
+872e2c604ae6: Waiting
+3e786c6242d2: Waiting
+13738903ddba: Waiting
+e1885a4a6316: Waiting
+96ea4c0b7279: Waiting
+24ccb49a4649: Waiting
+8be477f3ab55: Waiting
+caa6dcdc5475: Waiting
+dac0825f7ffb: Verifying Checksum
+dac0825f7ffb: Download complete
+2ebc019eb4e2: Verifying Checksum
+2ebc019eb4e2: Download complete
+ef3b655c7f88: Verifying Checksum
+ef3b655c7f88: Download complete
+82b0bb65d1bf: Verifying Checksum
+82b0bb65d1bf: Download complete
+124c757242f8: Verifying Checksum
+124c757242f8: Download complete
+ab9457f508c2: Download complete
+7c489deacb42: Verifying Checksum
+7c489deacb42: Download complete
+01a73db041ee: Verifying Checksum
+01a73db041ee: Download complete
+124c757242f8: Pull complete
+2ebc019eb4e2: Pull complete
+dac0825f7ffb: Pull complete
+82b0bb65d1bf: Pull complete
+ef3b655c7f88: Pull complete
+668aef055f5c: Verifying Checksum
+668aef055f5c: Download complete
+5922cd913d96: Verifying Checksum
+5922cd913d96: Download complete
+668aef055f5c: Pull complete
+197015bdd31b: Verifying Checksum
+197015bdd31b: Download complete
+f28a0c754c99: Download complete
+986a0416f817: Verifying Checksum
+986a0416f817: Download complete
+c7419e461cac: Verifying Checksum
+c7419e461cac: Download complete
+15ff5d045454: Verifying Checksum
+15ff5d045454: Download complete
+11b80df91015: Verifying Checksum
+11b80df91015: Download complete
+05570a8690e6: Verifying Checksum
+05570a8690e6: Download complete
+872e2c604ae6: Verifying Checksum
+872e2c604ae6: Download complete
+84b373be356b: Verifying Checksum
+84b373be356b: Download complete
+e1885a4a6316: Download complete
+3e786c6242d2: Verifying Checksum
+3e786c6242d2: Download complete
+96ea4c0b7279: Verifying Checksum
+96ea4c0b7279: Download complete
+24ccb49a4649: Verifying Checksum
+24ccb49a4649: Download complete
+13738903ddba: Verifying Checksum
+13738903ddba: Download complete
+caa6dcdc5475: Verifying Checksum
+caa6dcdc5475: Download complete
+84b373be356b: Pull complete
+ab9457f508c2: Pull complete
+7c489deacb42: Pull complete
+01a73db041ee: Pull complete
+8be477f3ab55: Verifying Checksum
+8be477f3ab55: Download complete
+11b80df91015: Pull complete
+5922cd913d96: Pull complete
+197015bdd31b: Pull complete
+f28a0c754c99: Pull complete
+986a0416f817: Pull complete
+c7419e461cac: Pull complete
+15ff5d045454: Pull complete
+05570a8690e6: Pull complete
+872e2c604ae6: Pull complete
+3e786c6242d2: Pull complete
+13738903ddba: Pull complete
+e1885a4a6316: Pull complete
+96ea4c0b7279: Pull complete
+24ccb49a4649: Pull complete
+8be477f3ab55: Pull complete
+caa6dcdc5475: Pull complete
+Digest: sha256:7d8e53322957adb11983cc05aa04a410aa320e078bdfe2e9e395dcdde9610e67
+Status: Downloaded newer image for qspprotocol/oyente-0.4.24:latest
+e032d1b34036aedf86d6319f7564f4532dee9c3bed56b3cb23445f368de7133a
++ [ -f AdminValidatorSet.sol ]
++ echo AdminValidatorSet.sol
+AdminValidatorSet.sol
++ docker exec -t oyente bash -c cd /oyente/oyente && python oyente.py -s /tmp/AdminValidatorSet.sol
++ [ -f Ownable.sol ]
++ echo Ownable.sol
+Ownable.sol
++ docker exec -t oyente bash -c cd /oyente/oyente && python oyente.py -s /tmp/Ownable.sol
++ [ -f SafeMath.sol ]
++ echo SafeMath.sol
+SafeMath.sol
++ docker exec -t oyente bash -c cd /oyente/oyente && python oyente.py -s /tmp/SafeMath.sol
++ [ -f SimpleValidatorSet.sol ]
++ echo SimpleValidatorSet.sol
+SimpleValidatorSet.sol
++ docker exec -t oyente bash -c cd /oyente/oyente && python oyente.py -s /tmp/SimpleValidatorSet.sol
++ [ -f Voteable.sol ]
++ echo Voteable.sol
+Voteable.sol
++ docker exec -t oyente bash -c cd /oyente/oyente && python oyente.py -s /tmp/Voteable.sol
++ docker rm -f oyente
+oyente
++ docker rm oyente
+Error: No such container: oyente
++ true
++ echo oyente reports are generated
+oyente reports are generated
+Email was triggered for: Always
+Sending email for trigger: Always
+Sending email to: dev@ledgerium.net
+Finished: SUCCESS

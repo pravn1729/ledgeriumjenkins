@@ -1,0 +1,51 @@
+Started by user [8mha:////4KT6bQD2QYPzPASzT6kDLASqslP/rZ7sy+4CmwAvwucaAAAAlx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzWEgZu/dLi1CL9xJTczDwAj6GcLcAAAAA=[0madmin
+Building in workspace /var/jenkins_home/jobs/Contract_TestReport/workspace
+ > git rev-parse --is-inside-work-tree # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url https://github.com/ledgerium/governanceapp.git # timeout=10
+Fetching upstream changes from https://github.com/ledgerium/governanceapp.git
+ > git --version # timeout=10
+ > git fetch --tags --progress https://github.com/ledgerium/governanceapp.git +refs/heads/*:refs/remotes/origin/*
+ > git rev-parse refs/remotes/origin/master^{commit} # timeout=10
+ > git rev-parse refs/remotes/origin/origin/master^{commit} # timeout=10
+Checking out Revision 8b1a3bbc7d97ff7716b79afba62b5dd51fd05aa4 (refs/remotes/origin/master)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 8b1a3bbc7d97ff7716b79afba62b5dd51fd05aa4
+ > git rev-list --no-walk 8b1a3bbc7d97ff7716b79afba62b5dd51fd05aa4 # timeout=10
+[workspace] $ /bin/sh -xe /tmp/jenkins7757826319962908772.sh
++ cd output
++ docker volume prune -f
+Deleted Volumes:
+6b625e111e8d9627f140ac051836a22104b0bb6f36c4c0f2a6f60f88c3bdb1a7
+
+Total reclaimed space: 169.6MB
++ docker-compose down
+/tmp/jenkins7757826319962908772.sh: 6: /tmp/jenkins7757826319962908772.sh: docker-compose: not found
++ true
++ docker network rm app_net
+app_net
++ docker network rm test_net
+Error response from daemon: error while removing network: network test_net id 99800f8c75cb4de451c15efb681036bff21e38f5a7d916562c06b0fa4e24877e has active endpoints
++ true
++ docker network create -d bridge --subnet 172.16.239.0/24 --gateway 172.16.239.1 app_net
+081b7ad2b39d8619794045a8922cdb3478cd5997f8db4758be5492c7f1741658
++ docker network create -d bridge --subnet 172.19.240.0/24 --gateway 172.19.240.1 test_net
+Error response from daemon: network with name test_net already exists
++ true
++ sed -i s/'.\//'\/home\/ledgerappuser\/docker\/jobs\/Contract_TestReport\/workspace\/output\//g docker-compose.yml
++ docker-compose up -d
+/tmp/jenkins7757826319962908772.sh: 16: /tmp/jenkins7757826319962908772.sh: docker-compose: not found
++ true
++ cd ..
++ rm -rf node_modules
++ rm -rf package-lock.json
++ npm install
+npm WARN deprecated fs-promise@2.0.3: Use mz or fs-extra^3.0 with Promise Support
+npm WARN deprecated tar.gz@1.0.7: ⚠️  WARNING ⚠️ tar.gz module has been deprecated and your application is vulnerable. Please use tar module instead: https://npmjs.com/tar
+Build was aborted
+Aborted by [8mha:////4KT6bQD2QYPzPASzT6kDLASqslP/rZ7sy+4CmwAvwucaAAAAlx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzWEgZu/dLi1CL9xJTczDwAj6GcLcAAAAA=[0madmin
+Recording test results
+ERROR: Step ‘Publish JUnit test result report’ failed: Test reports were found but none of them are new. Did leafNodes run? 
+For example, /var/jenkins_home/jobs/Contract_TestReport/workspace/api-test-reports.xml is 8 hr 44 min old
+
+Finished: ABORTED

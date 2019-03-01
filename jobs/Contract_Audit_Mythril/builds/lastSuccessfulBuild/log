@@ -1,0 +1,129 @@
+Started by timer
+Building in workspace /var/jenkins_home/jobs/Contract_Audit_Mythril/workspace
+ > git rev-parse --is-inside-work-tree # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url https://github.com/ledgerium/governanceapp.git # timeout=10
+Fetching upstream changes from https://github.com/ledgerium/governanceapp.git
+ > git --version # timeout=10
+ > git fetch --tags --progress https://github.com/ledgerium/governanceapp.git +refs/heads/*:refs/remotes/origin/*
+ > git rev-parse refs/remotes/origin/master^{commit} # timeout=10
+ > git rev-parse refs/remotes/origin/origin/master^{commit} # timeout=10
+Checking out Revision 8b1a3bbc7d97ff7716b79afba62b5dd51fd05aa4 (refs/remotes/origin/master)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 8b1a3bbc7d97ff7716b79afba62b5dd51fd05aa4
+ > git rev-list --no-walk 8b1a3bbc7d97ff7716b79afba62b5dd51fd05aa4 # timeout=10
+[workspace] $ /bin/sh -xe /tmp/jenkins4185912404727666075.sh
++ docker rm -f mythril
+Error: No such container: mythril
++ true
++ pwd
++ cd /var/jenkins_home/jobs/Contract_Audit_Mythril/workspace/contracts
++ chmod +777 AdminValidatorSet.sol Ownable.sol SafeMath.sol SimpleValidatorSet.sol Voteable.sol
++ [ -f AdminValidatorSet.sol ]
++ echo AdminValidatorSet.sol
+AdminValidatorSet.sol
++ sed -i s/\^//g AdminValidatorSet.sol
++ sed -i s/0.5.1/0.5.0/g AdminValidatorSet.sol
++ [ -f Ownable.sol ]
++ echo Ownable.sol
+Ownable.sol
++ sed -i s/\^//g Ownable.sol
++ sed -i s/0.5.1/0.5.0/g Ownable.sol
++ [ -f SafeMath.sol ]
++ echo SafeMath.sol
+SafeMath.sol
++ sed -i s/\^//g SafeMath.sol
++ sed -i s/0.5.1/0.5.0/g SafeMath.sol
++ [ -f SimpleValidatorSet.sol ]
++ echo SimpleValidatorSet.sol
+SimpleValidatorSet.sol
++ sed -i s/\^//g SimpleValidatorSet.sol
++ sed -i s/0.5.1/0.5.0/g SimpleValidatorSet.sol
++ [ -f Voteable.sol ]
++ echo Voteable.sol
+Voteable.sol
++ sed -i s/\^//g Voteable.sol
++ sed -i s/0.5.1/0.5.0/g Voteable.sol
++ [ -f AdminValidatorSet.sol ]
++ echo AdminValidatorSet.sol
+AdminValidatorSet.sol
++ docker run --name mythril -v /home/ledgerappuser/docker/Contract_Audit_Mythril/workspace/contracts:/tmp mythril/myth -x /tmp/AdminValidatorSet.sol
+ERROR:root:Solc has experienced a fatal error (code 1).
+
+"/tmp/AdminValidatorSet.sol" is not found.
+
++ echo =======================AdminValidatorSet.sol===========================
++ docker logs mythril
+ERROR:root:Solc has experienced a fatal error (code 1).
+
+"/tmp/AdminValidatorSet.sol" is not found.
+
++ docker rm -f mythril
+mythril
++ [ -f Ownable.sol ]
++ echo Ownable.sol
+Ownable.sol
++ docker run --name mythril -v /home/ledgerappuser/docker/Contract_Audit_Mythril/workspace/contracts:/tmp mythril/myth -x /tmp/Ownable.sol
+ERROR:root:Solc has experienced a fatal error (code 1).
+
+"/tmp/Ownable.sol" is not found.
+
++ echo =======================Ownable.sol===========================
++ docker logs mythril
+ERROR:root:Solc has experienced a fatal error (code 1).
+
+"/tmp/Ownable.sol" is not found.
+
++ docker rm -f mythril
+mythril
++ [ -f SafeMath.sol ]
++ echo SafeMath.sol
+SafeMath.sol
++ docker run --name mythril -v /home/ledgerappuser/docker/Contract_Audit_Mythril/workspace/contracts:/tmp mythril/myth -x /tmp/SafeMath.sol
+ERROR:root:Solc has experienced a fatal error (code 1).
+
+"/tmp/SafeMath.sol" is not found.
+
++ echo =======================SafeMath.sol===========================
++ docker logs mythril
+ERROR:root:Solc has experienced a fatal error (code 1).
+
+"/tmp/SafeMath.sol" is not found.
+
++ docker rm -f mythril
+mythril
++ [ -f SimpleValidatorSet.sol ]
++ echo SimpleValidatorSet.sol
+SimpleValidatorSet.sol
++ docker run --name mythril -v /home/ledgerappuser/docker/Contract_Audit_Mythril/workspace/contracts:/tmp mythril/myth -x /tmp/SimpleValidatorSet.sol
+ERROR:root:Solc has experienced a fatal error (code 1).
+
+"/tmp/SimpleValidatorSet.sol" is not found.
+
++ echo =======================SimpleValidatorSet.sol===========================
++ docker logs mythril
+ERROR:root:Solc has experienced a fatal error (code 1).
+
+"/tmp/SimpleValidatorSet.sol" is not found.
+
++ docker rm -f mythril
+mythril
++ [ -f Voteable.sol ]
++ echo Voteable.sol
+Voteable.sol
++ docker run --name mythril -v /home/ledgerappuser/docker/Contract_Audit_Mythril/workspace/contracts:/tmp mythril/myth -x /tmp/Voteable.sol
+ERROR:root:Solc has experienced a fatal error (code 1).
+
+"/tmp/Voteable.sol" is not found.
+
++ echo =======================Voteable.sol===========================
++ docker logs mythril
+ERROR:root:Solc has experienced a fatal error (code 1).
+
+"/tmp/Voteable.sol" is not found.
+
++ docker rm -f mythril
+mythril
++ echo Process Done
+Process Done
+Finished: SUCCESS

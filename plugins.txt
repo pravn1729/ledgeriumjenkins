@@ -1,0 +1,4 @@
+# leading spaces, and trailing spaces
+  git:latest  
+
+email-ext:2.63

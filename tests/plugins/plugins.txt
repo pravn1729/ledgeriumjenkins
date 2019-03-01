@@ -1,0 +1,5 @@
+maven-plugin:2.7.1
+ant:1.3
+email-ext@2.63
+ws-cleanup@0.37
+email-ext:2.63

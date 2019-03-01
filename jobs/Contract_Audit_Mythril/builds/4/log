@@ -1,0 +1,70 @@
+Started by user [8mha:////4HOiVknyBkPgqCG7Zsv4dz3PcDhG+omxim0VyTcLGwrhAAAAlx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzWEgZu/dLi1CL9xJTczDwAj6GcLcAAAAA=[0madmin
+Building in workspace /var/jenkins_home/jobs/Contract_Audit_Mythril/workspace
+[workspace] $ /bin/sh -xe /tmp/jenkins501147603263480246.sh
++ docker rm -f mythril
+Error: No such container: mythril
++ true
++ pwd
++ cd /var/jenkins_home/jobs/Contract_Audit_Mythril/workspace/contracts
++ chmod +777 AdminValidatorSet.sol Ownable.sol SafeMath.sol SimpleValidatorSet.sol Voteable.sol
++ [ -f AdminValidatorSet.sol ]
++ echo AdminValidatorSet.sol
+AdminValidatorSet.sol
++ sed -i s/\^//g AdminValidatorSet.sol
++ sed -i s/0.5.1/0.5.0/g AdminValidatorSet.sol
++ [ -f Ownable.sol ]
++ echo Ownable.sol
+Ownable.sol
++ sed -i s/\^//g Ownable.sol
++ sed -i s/0.5.1/0.5.0/g Ownable.sol
++ [ -f SafeMath.sol ]
++ echo SafeMath.sol
+SafeMath.sol
++ sed -i s/\^//g SafeMath.sol
++ sed -i s/0.5.1/0.5.0/g SafeMath.sol
++ [ -f SimpleValidatorSet.sol ]
++ echo SimpleValidatorSet.sol
+SimpleValidatorSet.sol
++ sed -i s/\^//g SimpleValidatorSet.sol
++ sed -i s/0.5.1/0.5.0/g SimpleValidatorSet.sol
++ [ -f Voteable.sol ]
++ echo Voteable.sol
+Voteable.sol
++ sed -i s/\^//g Voteable.sol
++ sed -i s/0.5.1/0.5.0/g Voteable.sol
++ [ -f AdminValidatorSet.sol ]
++ echo AdminValidatorSet.sol
+AdminValidatorSet.sol
++ docker run --name mythril -v /home/ledgerappuser/docker/jobs/Contract_Audit_Mythril/workspace/contracts:/tmp mythril/myth -x /tmp/AdminValidatorSet.sol
+The analysis was completed successfully. No issues were detected.
+
++ echo =======================AdminValidatorSet.sol===========================
++ docker logs mythril
++ docker rm -f mythril
+mythril
++ [ -f Ownable.sol ]
++ echo Ownable.sol
+Ownable.sol
++ docker run --name mythril -v /home/ledgerappuser/docker/jobs/Contract_Audit_Mythril/workspace/contracts:/tmp mythril/myth -x /tmp/Ownable.sol
+The analysis was completed successfully. No issues were detected.
+
++ echo =======================Ownable.sol===========================
++ docker logs mythril
++ docker rm -f mythril
+mythril
++ [ -f SafeMath.sol ]
++ echo SafeMath.sol
+SafeMath.sol
++ docker run --name mythril -v /home/ledgerappuser/docker/jobs/Contract_Audit_Mythril/workspace/contracts:/tmp mythril/myth -x /tmp/SafeMath.sol
+WARNING:root:No contract was created during the execution of contract creation Increase the resources for creation execution (--max-depth or --create-timeout)
+The analysis was completed successfully. No issues were detected.
+
++ echo =======================SafeMath.sol===========================
++ docker logs mythril
+WARNING:root:No contract was created during the execution of contract creation Increase the resources for creation execution (--max-depth or --create-timeout)
++ docker rm -f mythril
+mythril
++ [ -f SimpleValidatorSet.sol ]
++ echo SimpleValidatorSet.sol
+SimpleValidatorSet.sol
++ docker run --name mythril -v /home/ledgerappuser/docker/jobs/Contract_Audit_Mythril/workspace/contracts:/tmp mythril/myth -x /tmp/SimpleValidatorSet.sol

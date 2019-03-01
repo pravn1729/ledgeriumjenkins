@@ -1,0 +1,77 @@
+Started by timer
+Building in workspace /var/jenkins_home/jobs/Contract_Audit_Oyente/workspace
+ > git rev-parse --is-inside-work-tree # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url https://github.com/ledgerium/governanceapp.git # timeout=10
+Fetching upstream changes from https://github.com/ledgerium/governanceapp.git
+ > git --version # timeout=10
+ > git fetch --tags --progress https://github.com/ledgerium/governanceapp.git +refs/heads/*:refs/remotes/origin/*
+ > git rev-parse refs/remotes/origin/master^{commit} # timeout=10
+ > git rev-parse refs/remotes/origin/origin/master^{commit} # timeout=10
+Checking out Revision 8b1a3bbc7d97ff7716b79afba62b5dd51fd05aa4 (refs/remotes/origin/master)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 8b1a3bbc7d97ff7716b79afba62b5dd51fd05aa4
+ > git rev-list --no-walk 8b1a3bbc7d97ff7716b79afba62b5dd51fd05aa4 # timeout=10
+[workspace] $ /bin/sh -xe /tmp/jenkins8218895293982566525.sh
++ docker rm -f oyente
+Error: No such container: oyente
++ true
++ pwd
++ cd /var/jenkins_home/jobs/Contract_Audit_Oyente/workspace/contracts
++ chmod +777 AdminValidatorSet.sol Ownable.sol SafeMath.sol SimpleValidatorSet.sol Voteable.sol
++ echo 
++ [ -f AdminValidatorSet.sol ]
++ echo AdminValidatorSet.sol
+AdminValidatorSet.sol
++ sed -i s/\^//g AdminValidatorSet.sol
++ sed -i s/0.5.1/0.4.24/g AdminValidatorSet.sol
++ [ -f Ownable.sol ]
++ echo Ownable.sol
+Ownable.sol
++ sed -i s/\^//g Ownable.sol
++ sed -i s/0.5.1/0.4.24/g Ownable.sol
++ [ -f SafeMath.sol ]
++ echo SafeMath.sol
+SafeMath.sol
++ sed -i s/\^//g SafeMath.sol
++ sed -i s/0.5.1/0.4.24/g SafeMath.sol
++ [ -f SimpleValidatorSet.sol ]
++ echo SimpleValidatorSet.sol
+SimpleValidatorSet.sol
++ sed -i s/\^//g SimpleValidatorSet.sol
++ sed -i s/0.5.1/0.4.24/g SimpleValidatorSet.sol
++ [ -f Voteable.sol ]
++ echo Voteable.sol
+Voteable.sol
++ sed -i s/\^//g Voteable.sol
++ sed -i s/0.5.1/0.4.24/g Voteable.sol
++ docker run -d -it --name oyente -v /home/ledgerappuser/docker/jobs/Contract_Audit_Oyente/workspace/contracts:/tmp qspprotocol/oyente-0.4.24
+83fdae0fcd63e1163d9f90b9d451d6fb61210b967073312c80bf080e39be23f0
++ [ -f AdminValidatorSet.sol ]
++ echo AdminValidatorSet.sol
+AdminValidatorSet.sol
++ docker exec -t oyente bash -c cd /oyente/oyente && python oyente.py -s /tmp/AdminValidatorSet.sol
++ [ -f Ownable.sol ]
++ echo Ownable.sol
+Ownable.sol
++ docker exec -t oyente bash -c cd /oyente/oyente && python oyente.py -s /tmp/Ownable.sol
++ [ -f SafeMath.sol ]
++ echo SafeMath.sol
+SafeMath.sol
++ docker exec -t oyente bash -c cd /oyente/oyente && python oyente.py -s /tmp/SafeMath.sol
++ [ -f SimpleValidatorSet.sol ]
++ echo SimpleValidatorSet.sol
+SimpleValidatorSet.sol
++ docker exec -t oyente bash -c cd /oyente/oyente && python oyente.py -s /tmp/SimpleValidatorSet.sol
++ [ -f Voteable.sol ]
++ echo Voteable.sol
+Voteable.sol
++ docker exec -t oyente bash -c cd /oyente/oyente && python oyente.py -s /tmp/Voteable.sol
++ docker rm -f oyente
+oyente
++ docker rm oyente
+Error: No such container: oyente
++ true
++ echo oyente reports are generated
+oyente reports are generated
+Finished: SUCCESS

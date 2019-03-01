@@ -143,9 +143,17 @@ RUN mkdir -p "$JENKINS_HOME"/workspace/${job_name_3}
 #COPY /configs/${job_name_2}_config.xml "$JENKINS_HOME"/jobs/${job_name_2}/config.xml
 #COPY /configs/${job_name_3}_config.xml "$JENKINS_HOME"/jobs/${job_name_3}/config.xml
 
-COPY /configs/hudson.plugins.emailext.ExtendedEmailPublisher.xml "$JENKINS_HOME"/  
-COPY /configs/hudson.tasks.Mailer.xml "$JENKINS_HOME"/  
-COPY /configs/jenkins.model.JenkinsLocationConfiguration.xml "$JENKINS_HOME"/  
+COPY /configs/hudson.plugins.emailext.ExtendedEmailPublisher.xml "$JENKINS_HOME"/jobs/${job_name_1}/  
+COPY /configs/hudson.tasks.Mailer.xml "$JENKINS_HOME"/jobs/${job_name_1}/
+COPY /configs/jenkins.model.JenkinsLocationConfiguration.xml "$JENKINS_HOME"/jobs/${job_name_1}/  
+
+COPY /configs/hudson.plugins.emailext.ExtendedEmailPublisher.xml "$JENKINS_HOME"/jobs/${job_name_2}/  
+COPY /configs/hudson.tasks.Mailer.xml "$JENKINS_HOME"/jobs/${job_name_2}/
+COPY /configs/jenkins.model.JenkinsLocationConfiguration.xml "$JENKINS_HOME"/jobs/${job_name_2}/  
+
+COPY /configs/hudson.plugins.emailext.ExtendedEmailPublisher.xml "$JENKINS_HOME"/jobs/${job_name_3}/  
+COPY /configs/hudson.tasks.Mailer.xml "$JENKINS_HOME"/jobs/${job_name_3}/
+COPY /configs/jenkins.model.JenkinsLocationConfiguration.xml "$JENKINS_HOME"/jobs/${job_name_3}/  
 
 # Create build file structure  
 #USER root
@@ -201,3 +209,16 @@ COPY /configs/jenkins.model.JenkinsLocationConfiguration.xml "$JENKINS_HOME"/
 # Create build file structure  
 #RUN mkdir -p "$JENKINS_HOME"/jobs/${job_name_3}/latest/  
 #RUN mkdir -p "$JENKINS_HOME"/jobs/${job_name_3}/builds/1/
+
+
+# Add/Remove  the plugins you want  
+COPY install-plugins.sh /usr/local/bin/install-plugins.sh
+
+RUN /usr/local/bin/install-plugins.sh \  
+   dashboard-view:2.9.10 \  
+   pipeline-stage-view:2.4 \  
+   parameterized-trigger:2.32 \  
+   #bitbucket:1.1.5 \  
+   git:3.0.5 \  
+   email-ext:2.63 \
+   github:1.26.0

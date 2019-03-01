@@ -3,7 +3,7 @@ services:
   jenkins:
     container_name: ledgeriumjenkins
     image: ledgeriumengineering/ledgeriumjenkins:v1.0
-    environment:
+    environment: 
       JAVA_OPTS: "-Djava.awt.headless=true"  
       JAVA_OPTS: "-Djenkins.install.runSetupWizard=false" # Start jenkins unlocked  
     ports:

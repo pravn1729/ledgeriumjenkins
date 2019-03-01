@@ -1,0 +1,608 @@
+Started by timer
+Building in workspace /var/jenkins_home/jobs/Contract_TestReport/workspace
+ > git rev-parse --is-inside-work-tree # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url https://github.com/ledgerium/governanceapp.git # timeout=10
+Fetching upstream changes from https://github.com/ledgerium/governanceapp.git
+ > git --version # timeout=10
+ > git fetch --tags --progress https://github.com/ledgerium/governanceapp.git +refs/heads/*:refs/remotes/origin/*
+ > git rev-parse refs/remotes/origin/master^{commit} # timeout=10
+ > git rev-parse refs/remotes/origin/origin/master^{commit} # timeout=10
+Checking out Revision 8b1a3bbc7d97ff7716b79afba62b5dd51fd05aa4 (refs/remotes/origin/master)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 8b1a3bbc7d97ff7716b79afba62b5dd51fd05aa4
+ > git rev-list --no-walk 8b1a3bbc7d97ff7716b79afba62b5dd51fd05aa4 # timeout=10
+[workspace] $ /bin/sh -xe /tmp/jenkins2834539983568813065.sh
++ cd output
++ docker volume prune -f
+Deleted Volumes:
+5732ab42079d9adcde070b4b38e0d3f5706ac29b655bc81412387ad4c6efbe6b
+8b648113e199cd2612658ffab84b7652e24013e2ca08b01e84ebd52ca079edef
+43d44b97fe663a35de809897b521e61efb1da4ae9cf69f1dcdaed85f05245e75
+
+Total reclaimed space: 524MB
++ docker-compose down
+/tmp/jenkins2834539983568813065.sh: 6: /tmp/jenkins2834539983568813065.sh: docker-compose: not found
++ true
++ docker network rm app_net
+app_net
++ docker network rm test_net
+Error response from daemon: error while removing network: network test_net id 99800f8c75cb4de451c15efb681036bff21e38f5a7d916562c06b0fa4e24877e has active endpoints
++ true
++ docker network create -d bridge --subnet 172.16.239.0/24 --gateway 172.16.239.1 app_net
+e0c32bcb137ce5f895a457af90648f44ba3c9549ce0d3b97a72dbf705bf05cc3
++ docker network create -d bridge --subnet 172.19.240.0/24 --gateway 172.19.240.1 test_net
+Error response from daemon: network with name test_net already exists
++ true
++ sed -i s/'.\//'\/home\/ledgerappuser\/docker\/jobs\/Contract_TestReport\/workspace\/output\//g docker-compose.yml
++ docker-compose up -d
+/tmp/jenkins2834539983568813065.sh: 16: /tmp/jenkins2834539983568813065.sh: docker-compose: not found
++ true
++ cd ..
++ rm -rf node_modules
++ rm -rf package-lock.json
++ npm install
+npm WARN deprecated tar.gz@1.0.7: ⚠️  WARNING ⚠️ tar.gz module has been deprecated and your application is vulnerable. Please use tar module instead: https://npmjs.com/tar
+npm WARN deprecated fs-promise@2.0.3: Use mz or fs-extra^3.0 with Promise Support
+
+> scrypt@6.0.3 preinstall /var/jenkins_home/jobs/Contract_TestReport/workspace/node_modules/scrypt
+> node node-scrypt-preinstall.js
+
+
+> keccak@1.4.0 install /var/jenkins_home/jobs/Contract_TestReport/workspace/node_modules/keccak
+> npm run rebuild || echo "Keccak bindings compilation fail. Pure JS implementation will be used."
+
+
+> keccak@1.4.0 rebuild /var/jenkins_home/jobs/Contract_TestReport/workspace/node_modules/keccak
+> node-gyp rebuild
+
+make: Entering directory '/var/jenkins_home/jobs/Contract_TestReport/workspace/node_modules/keccak/build'
+  CXX(target) Release/obj.target/keccak/src/addon.o
+  CC(target) Release/obj.target/keccak/src/libkeccak/KeccakSponge.o
+  CC(target) Release/obj.target/keccak/src/libkeccak/KeccakP-1600-reference.o
+  SOLINK_MODULE(target) Release/obj.target/keccak.node
+  COPY Release/keccak.node
+make: Leaving directory '/var/jenkins_home/jobs/Contract_TestReport/workspace/node_modules/keccak/build'
+
+> scrypt@6.0.3 install /var/jenkins_home/jobs/Contract_TestReport/workspace/node_modules/scrypt
+> node-gyp rebuild
+
+make: Entering directory '/var/jenkins_home/jobs/Contract_TestReport/workspace/node_modules/scrypt/build'
+  SOLINK_MODULE(target) Release/obj.target/copied_files.node
+  COPY Release/copied_files.node
+  CC(target) Release/obj.target/scrypt_wrapper/src/util/memlimit.o
+  CC(target) Release/obj.target/scrypt_wrapper/src/scryptwrapper/keyderivation.o
+  CC(target) Release/obj.target/scrypt_wrapper/src/scryptwrapper/pickparams.o
+  CC(target) Release/obj.target/scrypt_wrapper/src/scryptwrapper/hash.o
+  AR(target) Release/obj.target/scrypt_wrapper.a
+  COPY Release/scrypt_wrapper.a
+  CC(target) Release/obj.target/scrypt_lib/scrypt/scrypt-1.2.0/lib/crypto/crypto_scrypt.o
+  CC(target) Release/obj.target/scrypt_lib/scrypt/scrypt-1.2.0/lib/crypto/crypto_scrypt_smix.o
+  CC(target) Release/obj.target/scrypt_lib/scrypt/scrypt-1.2.0/libcperciva/util/warnp.o
+  CC(target) Release/obj.target/scrypt_lib/scrypt/scrypt-1.2.0/libcperciva/alg/sha256.o
+  CC(target) Release/obj.target/scrypt_lib/scrypt/scrypt-1.2.0/libcperciva/util/insecure_memzero.o
+  CC(target) Release/obj.target/scrypt_lib/scrypt/scrypt-1.2.0/lib/scryptenc/scryptenc_cpuperf.o
+  AR(target) Release/obj.target/scrypt_lib.a
+  COPY Release/scrypt_lib.a
+  CXX(target) Release/obj.target/scrypt/src/node-boilerplate/scrypt_common.o
+  CXX(target) Release/obj.target/scrypt/src/node-boilerplate/scrypt_params_async.o
+In file included from ../src/node-boilerplate/inc/scrypt_params_async.h:28:0,
+                 from ../src/node-boilerplate/scrypt_params_async.cc:4:
+../src/node-boilerplate/inc/scrypt_async.h: In member function ‘virtual void ScryptAsyncWorker::HandleErrorCallback()’:
+../src/node-boilerplate/inc/scrypt_async.h:53:29: warning: ‘v8::Local<v8::Value> Nan::Callback::Call(int, v8::Local<v8::Value>*) const’ is deprecated [-Wdeprecated-declarations]
+       callback->Call(1, argv);
+                             ^
+In file included from ../src/node-boilerplate/scrypt_params_async.cc:1:0:
+../../nan/nan.h:1674:3: note: declared here
+   Call(int argc, v8::Local<v8::Value> argv[]) const {
+   ^~~~
+../src/node-boilerplate/scrypt_params_async.cc: In member function ‘virtual void ScryptParamsAsyncWorker::HandleOKCallback()’:
+../src/node-boilerplate/scrypt_params_async.cc:32:25: warning: ‘v8::Local<v8::Value> Nan::Callback::Call(int, v8::Local<v8::Value>*) const’ is deprecated [-Wdeprecated-declarations]
+   callback->Call(2, argv);
+                         ^
+In file included from ../src/node-boilerplate/scrypt_params_async.cc:1:0:
+../../nan/nan.h:1674:3: note: declared here
+   Call(int argc, v8::Local<v8::Value> argv[]) const {
+   ^~~~
+  CXX(target) Release/obj.target/scrypt/src/node-boilerplate/scrypt_params_sync.o
+  CXX(target) Release/obj.target/scrypt/src/node-boilerplate/scrypt_kdf_async.o
+In file included from ../src/node-boilerplate/inc/scrypt_kdf_async.h:28:0,
+                 from ../src/node-boilerplate/scrypt_kdf_async.cc:4:
+../src/node-boilerplate/inc/scrypt_async.h: In member function ‘virtual void ScryptAsyncWorker::HandleErrorCallback()’:
+../src/node-boilerplate/inc/scrypt_async.h:53:29: warning: ‘v8::Local<v8::Value> Nan::Callback::Call(int, v8::Local<v8::Value>*) const’ is deprecated [-Wdeprecated-declarations]
+       callback->Call(1, argv);
+                             ^
+In file included from ../src/node-boilerplate/scrypt_kdf_async.cc:1:0:
+../../nan/nan.h:1674:3: note: declared here
+   Call(int argc, v8::Local<v8::Value> argv[]) const {
+   ^~~~
+../src/node-boilerplate/scrypt_kdf_async.cc: In member function ‘virtual void ScryptKDFAsyncWorker::HandleOKCallback()’:
+../src/node-boilerplate/scrypt_kdf_async.cc:28:27: warning: ‘v8::Local<v8::Value> Nan::Callback::Call(int, v8::Local<v8::Value>*) const’ is deprecated [-Wdeprecated-declarations]
+     callback->Call(2, argv);
+                           ^
+In file included from ../src/node-boilerplate/scrypt_kdf_async.cc:1:0:
+../../nan/nan.h:1674:3: note: declared here
+   Call(int argc, v8::Local<v8::Value> argv[]) const {
+   ^~~~
+  CXX(target) Release/obj.target/scrypt/src/node-boilerplate/scrypt_kdf_sync.o
+  CXX(target) Release/obj.target/scrypt/src/node-boilerplate/scrypt_kdf-verify_sync.o
+  CXX(target) Release/obj.target/scrypt/src/node-boilerplate/scrypt_kdf-verify_async.o
+In file included from ../src/node-boilerplate/inc/scrypt_kdf-verify_async.h:28:0,
+                 from ../src/node-boilerplate/scrypt_kdf-verify_async.cc:4:
+../src/node-boilerplate/inc/scrypt_async.h: In member function ‘virtual void ScryptAsyncWorker::HandleErrorCallback()’:
+../src/node-boilerplate/inc/scrypt_async.h:53:29: warning: ‘v8::Local<v8::Value> Nan::Callback::Call(int, v8::Local<v8::Value>*) const’ is deprecated [-Wdeprecated-declarations]
+       callback->Call(1, argv);
+                             ^
+In file included from ../src/node-boilerplate/scrypt_kdf-verify_async.cc:1:0:
+../../nan/nan.h:1674:3: note: declared here
+   Call(int argc, v8::Local<v8::Value> argv[]) const {
+   ^~~~
+../src/node-boilerplate/scrypt_kdf-verify_async.cc: In member function ‘virtual void ScryptKDFVerifyAsyncWorker::HandleOKCallback()’:
+../src/node-boilerplate/scrypt_kdf-verify_async.cc:30:25: warning: ‘v8::Local<v8::Value> Nan::Callback::Call(int, v8::Local<v8::Value>*) const’ is deprecated [-Wdeprecated-declarations]
+   callback->Call(2, argv);
+                         ^
+In file included from ../src/node-boilerplate/scrypt_kdf-verify_async.cc:1:0:
+../../nan/nan.h:1674:3: note: declared here
+   Call(int argc, v8::Local<v8::Value> argv[]) const {
+   ^~~~
+  CXX(target) Release/obj.target/scrypt/src/node-boilerplate/scrypt_hash_sync.o
+  CXX(target) Release/obj.target/scrypt/src/node-boilerplate/scrypt_hash_async.o
+In file included from ../src/node-boilerplate/inc/scrypt_hash_async.h:28:0,
+                 from ../src/node-boilerplate/scrypt_hash_async.cc:28:
+../src/node-boilerplate/inc/scrypt_async.h: In member function ‘virtual void ScryptAsyncWorker::HandleErrorCallback()’:
+../src/node-boilerplate/inc/scrypt_async.h:53:29: warning: ‘v8::Local<v8::Value> Nan::Callback::Call(int, v8::Local<v8::Value>*) const’ is deprecated [-Wdeprecated-declarations]
+       callback->Call(1, argv);
+                             ^
+In file included from ../src/node-boilerplate/scrypt_hash_async.cc:25:0:
+../../nan/nan.h:1674:3: note: declared here
+   Call(int argc, v8::Local<v8::Value> argv[]) const {
+   ^~~~
+../src/node-boilerplate/scrypt_hash_async.cc: In member function ‘virtual void ScryptHashAsyncWorker::HandleOKCallback()’:
+../src/node-boilerplate/scrypt_hash_async.cc:52:25: warning: ‘v8::Local<v8::Value> Nan::Callback::Call(int, v8::Local<v8::Value>*) const’ is deprecated [-Wdeprecated-declarations]
+   callback->Call(2, argv);
+                         ^
+In file included from ../src/node-boilerplate/scrypt_hash_async.cc:25:0:
+../../nan/nan.h:1674:3: note: declared here
+   Call(int argc, v8::Local<v8::Value> argv[]) const {
+   ^~~~
+  CXX(target) Release/obj.target/scrypt/scrypt_node.o
+  SOLINK_MODULE(target) Release/obj.target/scrypt.node
+  COPY Release/scrypt.node
+make: Leaving directory '/var/jenkins_home/jobs/Contract_TestReport/workspace/node_modules/scrypt/build'
+
+> secp256k1@3.5.0 install /var/jenkins_home/jobs/Contract_TestReport/workspace/node_modules/keythereum/node_modules/secp256k1
+> npm run rebuild || echo "Secp256k1 bindings compilation fail. Pure JS implementation will be used."
+
+
+> secp256k1@3.5.0 rebuild /var/jenkins_home/jobs/Contract_TestReport/workspace/node_modules/keythereum/node_modules/secp256k1
+> node-gyp rebuild
+
+make: Entering directory '/var/jenkins_home/jobs/Contract_TestReport/workspace/node_modules/keythereum/node_modules/secp256k1/build'
+  CXX(target) Release/obj.target/secp256k1/src/addon.o
+  CXX(target) Release/obj.target/secp256k1/src/privatekey.o
+../src/privatekey.cc: In function ‘Nan::NAN_METHOD_RETURN_TYPE privateKeyNegate(Nan::NAN_METHOD_ARGS_TYPE)’:
+../src/privatekey.cc:73:61: warning: ignoring return value of ‘int secp256k1_ec_privkey_negate(const secp256k1_context*, unsigned char*)’, declared with attribute warn_unused_result [-Wunused-result]
+   secp256k1_ec_privkey_negate(secp256k1ctx, &private_key[0]);
+                                                             ^
+  CXX(target) Release/obj.target/secp256k1/src/publickey.o
+  CXX(target) Release/obj.target/secp256k1/src/signature.o
+  CXX(target) Release/obj.target/secp256k1/src/ecdsa.o
+  CXX(target) Release/obj.target/secp256k1/src/ecdh.o
+  CC(target) Release/obj.target/secp256k1/src/secp256k1-src/src/secp256k1.o
+../src/secp256k1-src/src/secp256k1.c: In function ‘secp256k1_ec_pubkey_parse’:
+../src/secp256k1-src/src/secp256k1.c:22:8: warning: nonnull argument ‘pubkey’ compared to NULL [-Wnonnull-compare]
+     if (EXPECT(!(cond), 0)) { \
+        ^
+../src/secp256k1-src/src/secp256k1.c:154:5: note: in expansion of macro ‘ARG_CHECK’
+     ARG_CHECK(pubkey != NULL);
+     ^~~~~~~~~
+../src/secp256k1-src/src/secp256k1.c:22:8: warning: nonnull argument ‘input’ compared to NULL [-Wnonnull-compare]
+     if (EXPECT(!(cond), 0)) { \
+        ^
+../src/secp256k1-src/src/secp256k1.c:156:5: note: in expansion of macro ‘ARG_CHECK’
+     ARG_CHECK(input != NULL);
+     ^~~~~~~~~
+../src/secp256k1-src/src/secp256k1.c: In function ‘secp256k1_ec_pubkey_serialize’:
+../src/secp256k1-src/src/secp256k1.c:22:8: warning: nonnull argument ‘output’ compared to NULL [-Wnonnull-compare]
+     if (EXPECT(!(cond), 0)) { \
+        ^
+../src/secp256k1-src/src/secp256k1.c:175:5: note: in expansion of macro ‘ARG_CHECK’
+     ARG_CHECK(output != NULL);
+     ^~~~~~~~~
+../src/secp256k1-src/src/secp256k1.c:22:8: warning: nonnull argument ‘outputlen’ compared to NULL [-Wnonnull-compare]
+     if (EXPECT(!(cond), 0)) { \
+        ^
+../src/secp256k1-src/src/secp256k1.c:171:5: note: in expansion of macro ‘ARG_CHECK’
+     ARG_CHECK(outputlen != NULL);
+     ^~~~~~~~~
+../src/secp256k1-src/src/secp256k1.c:22:8: warning: nonnull argument ‘pubkey’ compared to NULL [-Wnonnull-compare]
+     if (EXPECT(!(cond), 0)) { \
+        ^
+../src/secp256k1-src/src/secp256k1.c:177:5: note: in expansion of macro ‘ARG_CHECK’
+     ARG_CHECK(pubkey != NULL);
+     ^~~~~~~~~
+../src/secp256k1-src/src/secp256k1.c: In function ‘secp256k1_ecdsa_signature_parse_der’:
+../src/secp256k1-src/src/secp256k1.c:22:8: warning: nonnull argument ‘sig’ compared to NULL [-Wnonnull-compare]
+     if (EXPECT(!(cond), 0)) { \
+        ^
+../src/secp256k1-src/src/secp256k1.c:216:5: note: in expansion of macro ‘ARG_CHECK’
+     ARG_CHECK(sig != NULL);
+     ^~~~~~~~~
+../src/secp256k1-src/src/secp256k1.c:22:8: warning: nonnull argument ‘input’ compared to NULL [-Wnonnull-compare]
+     if (EXPECT(!(cond), 0)) { \
+        ^
+../src/secp256k1-src/src/secp256k1.c:217:5: note: in expansion of macro ‘ARG_CHECK’
+     ARG_CHECK(input != NULL);
+     ^~~~~~~~~
+../src/secp256k1-src/src/secp256k1.c: In function ‘secp256k1_ecdsa_signature_parse_compact’:
+../src/secp256k1-src/src/secp256k1.c:22:8: warning: nonnull argument ‘sig’ compared to NULL [-Wnonnull-compare]
+     if (EXPECT(!(cond), 0)) { \
+        ^
+../src/secp256k1-src/src/secp256k1.c:234:5: note: in expansion of macro ‘ARG_CHECK’
+     ARG_CHECK(sig != NULL);
+     ^~~~~~~~~
+../src/secp256k1-src/src/secp256k1.c:22:8: warning: nonnull argument ‘input64’ compared to NULL [-Wnonnull-compare]
+     if (EXPECT(!(cond), 0)) { \
+        ^
+../src/secp256k1-src/src/secp256k1.c:235:5: note: in expansion of macro ‘ARG_CHECK’
+     ARG_CHECK(input64 != NULL);
+     ^~~~~~~~~
+../src/secp256k1-src/src/secp256k1.c: In function ‘secp256k1_ecdsa_signature_serialize_der’:
+../src/secp256k1-src/src/secp256k1.c:22:8: warning: nonnull argument ‘output’ compared to NULL [-Wnonnull-compare]
+     if (EXPECT(!(cond), 0)) { \
+        ^
+../src/secp256k1-src/src/secp256k1.c:253:5: note: in expansion of macro ‘ARG_CHECK’
+     ARG_CHECK(output != NULL);
+     ^~~~~~~~~
+../src/secp256k1-src/src/secp256k1.c:22:8: warning: nonnull argument ‘outputlen’ compared to NULL [-Wnonnull-compare]
+     if (EXPECT(!(cond), 0)) { \
+        ^
+../src/secp256k1-src/src/secp256k1.c:254:5: note: in expansion of macro ‘ARG_CHECK’
+     ARG_CHECK(outputlen != NULL);
+     ^~~~~~~~~
+../src/secp256k1-src/src/secp256k1.c:22:8: warning: nonnull argument ‘sig’ compared to NULL [-Wnonnull-compare]
+     if (EXPECT(!(cond), 0)) { \
+        ^
+../src/secp256k1-src/src/secp256k1.c:255:5: note: in expansion of macro ‘ARG_CHECK’
+     ARG_CHECK(sig != NULL);
+     ^~~~~~~~~
+../src/secp256k1-src/src/secp256k1.c: In function ‘secp256k1_ecdsa_signature_serialize_compact’:
+../src/secp256k1-src/src/secp256k1.c:22:8: warning: nonnull argument ‘output64’ compared to NULL [-Wnonnull-compare]
+     if (EXPECT(!(cond), 0)) { \
+        ^
+../src/secp256k1-src/src/secp256k1.c:265:5: note: in expansion of macro ‘ARG_CHECK’
+     ARG_CHECK(output64 != NULL);
+     ^~~~~~~~~
+../src/secp256k1-src/src/secp256k1.c:22:8: warning: nonnull argument ‘sig’ compared to NULL [-Wnonnull-compare]
+     if (EXPECT(!(cond), 0)) { \
+        ^
+../src/secp256k1-src/src/secp256k1.c:266:5: note: in expansion of macro ‘ARG_CHECK’
+     ARG_CHECK(sig != NULL);
+     ^~~~~~~~~
+../src/secp256k1-src/src/secp256k1.c: In function ‘secp256k1_ecdsa_signature_normalize’:
+../src/secp256k1-src/src/secp256k1.c:22:8: warning: nonnull argument ‘sigin’ compared to NULL [-Wnonnull-compare]
+     if (EXPECT(!(cond), 0)) { \
+        ^
+../src/secp256k1-src/src/secp256k1.c:279:5: note: in expansion of macro ‘ARG_CHECK’
+     ARG_CHECK(sigin != NULL);
+     ^~~~~~~~~
+../src/secp256k1-src/src/secp256k1.c: In function ‘secp256k1_ecdsa_verify’:
+../src/secp256k1-src/src/secp256k1.c:22:8: warning: nonnull argument ‘sig’ compared to NULL [-Wnonnull-compare]
+     if (EXPECT(!(cond), 0)) { \
+        ^
+../src/secp256k1-src/src/secp256k1.c:300:5: note: in expansion of macro ‘ARG_CHECK’
+     ARG_CHECK(sig != NULL);
+     ^~~~~~~~~
+../src/secp256k1-src/src/secp256k1.c:22:8: warning: nonnull argument ‘msg32’ compared to NULL [-Wnonnull-compare]
+     if (EXPECT(!(cond), 0)) { \
+        ^
+../src/secp256k1-src/src/secp256k1.c:299:5: note: in expansion of macro ‘ARG_CHECK’
+     ARG_CHECK(msg32 != NULL);
+     ^~~~~~~~~
+../src/secp256k1-src/src/secp256k1.c:22:8: warning: nonnull argument ‘pubkey’ compared to NULL [-Wnonnull-compare]
+     if (EXPECT(!(cond), 0)) { \
+        ^
+../src/secp256k1-src/src/secp256k1.c:301:5: note: in expansion of macro ‘ARG_CHECK’
+     ARG_CHECK(pubkey != NULL);
+     ^~~~~~~~~
+../src/secp256k1-src/src/secp256k1.c: In function ‘secp256k1_ecdsa_sign’:
+../src/secp256k1-src/src/secp256k1.c:22:8: warning: nonnull argument ‘signature’ compared to NULL [-Wnonnull-compare]
+     if (EXPECT(!(cond), 0)) { \
+        ^
+../src/secp256k1-src/src/secp256k1.c:353:5: note: in expansion of macro ‘ARG_CHECK’
+     ARG_CHECK(signature != NULL);
+     ^~~~~~~~~
+../src/secp256k1-src/src/secp256k1.c:22:8: warning: nonnull argument ‘msg32’ compared to NULL [-Wnonnull-compare]
+     if (EXPECT(!(cond), 0)) { \
+        ^
+../src/secp256k1-src/src/secp256k1.c:352:5: note: in expansion of macro ‘ARG_CHECK’
+     ARG_CHECK(msg32 != NULL);
+     ^~~~~~~~~
+../src/secp256k1-src/src/secp256k1.c:22:8: warning: nonnull argument ‘seckey’ compared to NULL [-Wnonnull-compare]
+     if (EXPECT(!(cond), 0)) { \
+        ^
+../src/secp256k1-src/src/secp256k1.c:354:5: note: in expansion of macro ‘ARG_CHECK’
+     ARG_CHECK(seckey != NULL);
+     ^~~~~~~~~
+../src/secp256k1-src/src/secp256k1.c: In function ‘secp256k1_ec_seckey_verify’:
+../src/secp256k1-src/src/secp256k1.c:22:8: warning: nonnull argument ‘seckey’ compared to NULL [-Wnonnull-compare]
+     if (EXPECT(!(cond), 0)) { \
+        ^
+../src/secp256k1-src/src/secp256k1.c:396:5: note: in expansion of macro ‘ARG_CHECK’
+     ARG_CHECK(seckey != NULL);
+     ^~~~~~~~~
+../src/secp256k1-src/src/secp256k1.c: In function ‘secp256k1_ec_pubkey_create’:
+../src/secp256k1-src/src/secp256k1.c:22:8: warning: nonnull argument ‘pubkey’ compared to NULL [-Wnonnull-compare]
+     if (EXPECT(!(cond), 0)) { \
+        ^
+../src/secp256k1-src/src/secp256k1.c:411:5: note: in expansion of macro ‘ARG_CHECK’
+     ARG_CHECK(pubkey != NULL);
+     ^~~~~~~~~
+../src/secp256k1-src/src/secp256k1.c:22:8: warning: nonnull argument ‘seckey’ compared to NULL [-Wnonnull-compare]
+     if (EXPECT(!(cond), 0)) { \
+        ^
+../src/secp256k1-src/src/secp256k1.c:414:5: note: in expansion of macro ‘ARG_CHECK’
+     ARG_CHECK(seckey != NULL);
+     ^~~~~~~~~
+../src/secp256k1-src/src/secp256k1.c: In function ‘secp256k1_ec_privkey_negate’:
+../src/secp256k1-src/src/secp256k1.c:22:8: warning: nonnull argument ‘seckey’ compared to NULL [-Wnonnull-compare]
+     if (EXPECT(!(cond), 0)) { \
+        ^
+../src/secp256k1-src/src/secp256k1.c:430:5: note: in expansion of macro ‘ARG_CHECK’
+     ARG_CHECK(seckey != NULL);
+     ^~~~~~~~~
+../src/secp256k1-src/src/secp256k1.c: In function ‘secp256k1_ec_pubkey_negate’:
+../src/secp256k1-src/src/secp256k1.c:22:8: warning: nonnull argument ‘pubkey’ compared to NULL [-Wnonnull-compare]
+     if (EXPECT(!(cond), 0)) { \
+        ^
+../src/secp256k1-src/src/secp256k1.c:443:5: note: in expansion of macro ‘ARG_CHECK’
+     ARG_CHECK(pubkey != NULL);
+     ^~~~~~~~~
+../src/secp256k1-src/src/secp256k1.c: In function ‘secp256k1_ec_privkey_tweak_add’:
+../src/secp256k1-src/src/secp256k1.c:22:8: warning: nonnull argument ‘seckey’ compared to NULL [-Wnonnull-compare]
+     if (EXPECT(!(cond), 0)) { \
+        ^
+../src/secp256k1-src/src/secp256k1.c:460:5: note: in expansion of macro ‘ARG_CHECK’
+     ARG_CHECK(seckey != NULL);
+     ^~~~~~~~~
+../src/secp256k1-src/src/secp256k1.c:22:8: warning: nonnull argument ‘tweak’ compared to NULL [-Wnonnull-compare]
+     if (EXPECT(!(cond), 0)) { \
+        ^
+../src/secp256k1-src/src/secp256k1.c:461:5: note: in expansion of macro ‘ARG_CHECK’
+     ARG_CHECK(tweak != NULL);
+     ^~~~~~~~~
+../src/secp256k1-src/src/secp256k1.c: In function ‘secp256k1_ec_pubkey_tweak_add’:
+../src/secp256k1-src/src/secp256k1.c:22:8: warning: nonnull argument ‘pubkey’ compared to NULL [-Wnonnull-compare]
+     if (EXPECT(!(cond), 0)) { \
+        ^
+../src/secp256k1-src/src/secp256k1.c:484:5: note: in expansion of macro ‘ARG_CHECK’
+     ARG_CHECK(pubkey != NULL);
+     ^~~~~~~~~
+../src/secp256k1-src/src/secp256k1.c:22:8: warning: nonnull argument ‘tweak’ compared to NULL [-Wnonnull-compare]
+     if (EXPECT(!(cond), 0)) { \
+        ^
+../src/secp256k1-src/src/secp256k1.c:485:5: note: in expansion of macro ‘ARG_CHECK’
+     ARG_CHECK(tweak != NULL);
+     ^~~~~~~~~
+../src/secp256k1-src/src/secp256k1.c: In function ‘secp256k1_ec_privkey_tweak_mul’:
+../src/secp256k1-src/src/secp256k1.c:22:8: warning: nonnull argument ‘seckey’ compared to NULL [-Wnonnull-compare]
+     if (EXPECT(!(cond), 0)) { \
+        ^
+../src/secp256k1-src/src/secp256k1.c:507:5: note: in expansion of macro ‘ARG_CHECK’
+     ARG_CHECK(seckey != NULL);
+     ^~~~~~~~~
+../src/secp256k1-src/src/secp256k1.c:22:8: warning: nonnull argument ‘tweak’ compared to NULL [-Wnonnull-compare]
+     if (EXPECT(!(cond), 0)) { \
+        ^
+../src/secp256k1-src/src/secp256k1.c:508:5: note: in expansion of macro ‘ARG_CHECK’
+     ARG_CHECK(tweak != NULL);
+     ^~~~~~~~~
+../src/secp256k1-src/src/secp256k1.c: In function ‘secp256k1_ec_pubkey_tweak_mul’:
+../src/secp256k1-src/src/secp256k1.c:22:8: warning: nonnull argument ‘pubkey’ compared to NULL [-Wnonnull-compare]
+     if (EXPECT(!(cond), 0)) { \
+        ^
+../src/secp256k1-src/src/secp256k1.c:530:5: note: in expansion of macro ‘ARG_CHECK’
+     ARG_CHECK(pubkey != NULL);
+     ^~~~~~~~~
+../src/secp256k1-src/src/secp256k1.c:22:8: warning: nonnull argument ‘tweak’ compared to NULL [-Wnonnull-compare]
+     if (EXPECT(!(cond), 0)) { \
+        ^
+../src/secp256k1-src/src/secp256k1.c:531:5: note: in expansion of macro ‘ARG_CHECK’
+     ARG_CHECK(tweak != NULL);
+     ^~~~~~~~~
+../src/secp256k1-src/src/secp256k1.c: In function ‘secp256k1_ec_pubkey_combine’:
+../src/secp256k1-src/src/secp256k1.c:22:8: warning: nonnull argument ‘pubnonce’ compared to NULL [-Wnonnull-compare]
+     if (EXPECT(!(cond), 0)) { \
+        ^
+../src/secp256k1-src/src/secp256k1.c:559:5: note: in expansion of macro ‘ARG_CHECK’
+     ARG_CHECK(pubnonce != NULL);
+     ^~~~~~~~~
+../src/secp256k1-src/src/secp256k1.c:22:8: warning: nonnull argument ‘pubnonces’ compared to NULL [-Wnonnull-compare]
+     if (EXPECT(!(cond), 0)) { \
+        ^
+../src/secp256k1-src/src/secp256k1.c:562:5: note: in expansion of macro ‘ARG_CHECK’
+     ARG_CHECK(pubnonces != NULL);
+     ^~~~~~~~~
+../src/secp256k1-src/src/secp256k1.c: In function ‘secp256k1_ecdsa_recoverable_signature_parse_compact’:
+../src/secp256k1-src/src/secp256k1.c:22:8: warning: nonnull argument ‘sig’ compared to NULL [-Wnonnull-compare]
+     if (EXPECT(!(cond), 0)) { \
+        ^
+../src/secp256k1-src/src/modules/recovery/main_impl.h:44:5: note: in expansion of macro ‘ARG_CHECK’
+     ARG_CHECK(sig != NULL);
+     ^~~~~~~~~
+../src/secp256k1-src/src/secp256k1.c:22:8: warning: nonnull argument ‘input64’ compared to NULL [-Wnonnull-compare]
+     if (EXPECT(!(cond), 0)) { \
+        ^
+../src/secp256k1-src/src/modules/recovery/main_impl.h:45:5: note: in expansion of macro ‘ARG_CHECK’
+     ARG_CHECK(input64 != NULL);
+     ^~~~~~~~~
+../src/secp256k1-src/src/secp256k1.c: In function ‘secp256k1_ecdsa_recoverable_signature_serialize_compact’:
+../src/secp256k1-src/src/secp256k1.c:22:8: warning: nonnull argument ‘output64’ compared to NULL [-Wnonnull-compare]
+     if (EXPECT(!(cond), 0)) { \
+        ^
+../src/secp256k1-src/src/modules/recovery/main_impl.h:64:5: note: in expansion of macro ‘ARG_CHECK’
+     ARG_CHECK(output64 != NULL);
+     ^~~~~~~~~
+../src/secp256k1-src/src/secp256k1.c:22:8: warning: nonnull argument ‘recid’ compared to NULL [-Wnonnull-compare]
+     if (EXPECT(!(cond), 0)) { \
+        ^
+../src/secp256k1-src/src/modules/recovery/main_impl.h:66:5: note: in expansion of macro ‘ARG_CHECK’
+     ARG_CHECK(recid != NULL);
+     ^~~~~~~~~
+../src/secp256k1-src/src/secp256k1.c:22:8: warning: nonnull argument ‘sig’ compared to NULL [-Wnonnull-compare]
+     if (EXPECT(!(cond), 0)) { \
+        ^
+../src/secp256k1-src/src/modules/recovery/main_impl.h:65:5: note: in expansion of macro ‘ARG_CHECK’
+     ARG_CHECK(sig != NULL);
+     ^~~~~~~~~
+../src/secp256k1-src/src/secp256k1.c: In function ‘secp256k1_ecdsa_recoverable_signature_convert’:
+../src/secp256k1-src/src/secp256k1.c:22:8: warning: nonnull argument ‘sig’ compared to NULL [-Wnonnull-compare]
+     if (EXPECT(!(cond), 0)) { \
+        ^
+../src/secp256k1-src/src/modules/recovery/main_impl.h:79:5: note: in expansion of macro ‘ARG_CHECK’
+     ARG_CHECK(sig != NULL);
+     ^~~~~~~~~
+../src/secp256k1-src/src/secp256k1.c:22:8: warning: nonnull argument ‘sigin’ compared to NULL [-Wnonnull-compare]
+     if (EXPECT(!(cond), 0)) { \
+        ^
+../src/secp256k1-src/src/modules/recovery/main_impl.h:80:5: note: in expansion of macro ‘ARG_CHECK’
+     ARG_CHECK(sigin != NULL);
+     ^~~~~~~~~
+../src/secp256k1-src/src/secp256k1.c: In function ‘secp256k1_ecdsa_sign_recoverable’:
+../src/secp256k1-src/src/secp256k1.c:22:8: warning: nonnull argument ‘signature’ compared to NULL [-Wnonnull-compare]
+     if (EXPECT(!(cond), 0)) { \
+        ^
+../src/secp256k1-src/src/modules/recovery/main_impl.h:132:5: note: in expansion of macro ‘ARG_CHECK’
+     ARG_CHECK(signature != NULL);
+     ^~~~~~~~~
+../src/secp256k1-src/src/secp256k1.c:22:8: warning: nonnull argument ‘msg32’ compared to NULL [-Wnonnull-compare]
+     if (EXPECT(!(cond), 0)) { \
+        ^
+../src/secp256k1-src/src/modules/recovery/main_impl.h:131:5: note: in expansion of macro ‘ARG_CHECK’
+     ARG_CHECK(msg32 != NULL);
+     ^~~~~~~~~
+../src/secp256k1-src/src/secp256k1.c:22:8: warning: nonnull argument ‘seckey’ compared to NULL [-Wnonnull-compare]
+     if (EXPECT(!(cond), 0)) { \
+        ^
+../src/secp256k1-src/src/modules/recovery/main_impl.h:133:5: note: in expansion of macro ‘ARG_CHECK’
+     ARG_CHECK(seckey != NULL);
+     ^~~~~~~~~
+../src/secp256k1-src/src/secp256k1.c: In function ‘secp256k1_ecdsa_recover’:
+../src/secp256k1-src/src/secp256k1.c:22:8: warning: nonnull argument ‘pubkey’ compared to NULL [-Wnonnull-compare]
+     if (EXPECT(!(cond), 0)) { \
+        ^
+../src/secp256k1-src/src/modules/recovery/main_impl.h:179:5: note: in expansion of macro ‘ARG_CHECK’
+     ARG_CHECK(pubkey != NULL);
+     ^~~~~~~~~
+../src/secp256k1-src/src/secp256k1.c:22:8: warning: nonnull argument ‘signature’ compared to NULL [-Wnonnull-compare]
+     if (EXPECT(!(cond), 0)) { \
+        ^
+../src/secp256k1-src/src/modules/recovery/main_impl.h:178:5: note: in expansion of macro ‘ARG_CHECK’
+     ARG_CHECK(signature != NULL);
+     ^~~~~~~~~
+../src/secp256k1-src/src/secp256k1.c:22:8: warning: nonnull argument ‘msg32’ compared to NULL [-Wnonnull-compare]
+     if (EXPECT(!(cond), 0)) { \
+        ^
+../src/secp256k1-src/src/modules/recovery/main_impl.h:177:5: note: in expansion of macro ‘ARG_CHECK’
+     ARG_CHECK(msg32 != NULL);
+     ^~~~~~~~~
+  CC(target) Release/obj.target/secp256k1/src/secp256k1-src/contrib/lax_der_parsing.o
+  CC(target) Release/obj.target/secp256k1/src/secp256k1-src/contrib/lax_der_privatekey_parsing.o
+  SOLINK_MODULE(target) Release/obj.target/secp256k1.node
+  COPY Release/secp256k1.node
+make: Leaving directory '/var/jenkins_home/jobs/Contract_TestReport/workspace/node_modules/keythereum/node_modules/secp256k1/build'
+
+> secp256k1@3.6.2 install /var/jenkins_home/jobs/Contract_TestReport/workspace/node_modules/secp256k1
+> npm run rebuild || echo "Secp256k1 bindings compilation fail. Pure JS implementation will be used."
+
+
+> secp256k1@3.6.2 rebuild /var/jenkins_home/jobs/Contract_TestReport/workspace/node_modules/secp256k1
+> node-gyp rebuild
+
+make: Entering directory '/var/jenkins_home/jobs/Contract_TestReport/workspace/node_modules/secp256k1/build'
+  CXX(target) Release/obj.target/secp256k1/src/addon.o
+  CXX(target) Release/obj.target/secp256k1/src/privatekey.o
+../src/privatekey.cc: In function ‘Nan::NAN_METHOD_RETURN_TYPE privateKeyNegate(Nan::NAN_METHOD_ARGS_TYPE)’:
+../src/privatekey.cc:73:61: warning: ignoring return value of ‘int secp256k1_ec_privkey_negate(const secp256k1_context*, unsigned char*)’, declared with attribute warn_unused_result [-Wunused-result]
+   secp256k1_ec_privkey_negate(secp256k1ctx, &private_key[0]);
+                                                             ^
+  CXX(target) Release/obj.target/secp256k1/src/publickey.o
+  CXX(target) Release/obj.target/secp256k1/src/signature.o
+  CXX(target) Release/obj.target/secp256k1/src/ecdsa.o
+  CXX(target) Release/obj.target/secp256k1/src/ecdh.o
+  CC(target) Release/obj.target/secp256k1/src/secp256k1-src/src/secp256k1.o
+  CC(target) Release/obj.target/secp256k1/src/secp256k1-src/contrib/lax_der_parsing.o
+  CC(target) Release/obj.target/secp256k1/src/secp256k1-src/contrib/lax_der_privatekey_parsing.o
+  SOLINK_MODULE(target) Release/obj.target/secp256k1.node
+  COPY Release/secp256k1.node
+make: Leaving directory '/var/jenkins_home/jobs/Contract_TestReport/workspace/node_modules/secp256k1/build'
+
+> sha3@1.2.2 install /var/jenkins_home/jobs/Contract_TestReport/workspace/node_modules/sha3
+> node-gyp rebuild
+
+make: Entering directory '/var/jenkins_home/jobs/Contract_TestReport/workspace/node_modules/sha3/build'
+  CXX(target) Release/obj.target/sha3/src/addon.o
+  CXX(target) Release/obj.target/sha3/src/displayIntermediateValues.o
+  CXX(target) Release/obj.target/sha3/src/KeccakF-1600-reference.o
+  CXX(target) Release/obj.target/sha3/src/KeccakNISTInterface.o
+  CXX(target) Release/obj.target/sha3/src/KeccakSponge.o
+  SOLINK_MODULE(target) Release/obj.target/sha3.node
+  COPY Release/sha3.node
+make: Leaving directory '/var/jenkins_home/jobs/Contract_TestReport/workspace/node_modules/sha3/build'
+
+> websocket@1.0.26 install /var/jenkins_home/jobs/Contract_TestReport/workspace/node_modules/web3-providers-ws/node_modules/websocket
+> (node-gyp rebuild 2> builderror.log) || (exit 0)
+
+make: Entering directory '/var/jenkins_home/jobs/Contract_TestReport/workspace/node_modules/web3-providers-ws/node_modules/websocket/build'
+  CXX(target) Release/obj.target/bufferutil/src/bufferutil.o
+  SOLINK_MODULE(target) Release/obj.target/bufferutil.node
+  COPY Release/bufferutil.node
+  CXX(target) Release/obj.target/validation/src/validation.o
+  SOLINK_MODULE(target) Release/obj.target/validation.node
+  COPY Release/validation.node
+make: Leaving directory '/var/jenkins_home/jobs/Contract_TestReport/workspace/node_modules/web3-providers-ws/node_modules/websocket/build'
+
+> websocket@1.0.28 install /var/jenkins_home/jobs/Contract_TestReport/workspace/node_modules/websocket
+> (node-gyp rebuild 2> builderror.log) || (exit 0)
+
+make: Entering directory '/var/jenkins_home/jobs/Contract_TestReport/workspace/node_modules/websocket/build'
+  CXX(target) Release/obj.target/bufferutil/src/bufferutil.o
+  SOLINK_MODULE(target) Release/obj.target/bufferutil.node
+  COPY Release/bufferutil.node
+  CXX(target) Release/obj.target/validation/src/validation.o
+  SOLINK_MODULE(target) Release/obj.target/validation.node
+  COPY Release/validation.node
+make: Leaving directory '/var/jenkins_home/jobs/Contract_TestReport/workspace/node_modules/websocket/build'
+npm notice created a lockfile as package-lock.json. You should commit this file.
+npm WARN truffle-hdwallet-provider@0.0.6 requires a peer of truffle@4.x but none is installed. You must install peer dependencies yourself.
+npm WARN The package chai-bignumber is included as both a dev and production dependency.
+
+added 758 packages from 894 contributors and audited 125015 packages in 133.375s
+found 0 vulnerabilities
+
++ docker+ grep validator-0_1
+ ps -a
++ awk {print $1}
++ nodename=4450fd5be5e8
++ docker inspect --format {{ .NetworkSettings.Networks.test_net.IPAddress }} 4450fd5be5e8
++ ipaddr=172.19.240.10
++ echo npm test
+npm test
++ sed -i s/localhost/172.19.240.10/g setup.js
++ sed -i s/mocha protocol http/mocha --reporter=xunit/g package.json
++ sed -i s/\.\/test/\.\/test>api-test-reports\.xml/g package.json
++ npm test
+
+> governanceapp@0.2.0 test /var/jenkins_home/jobs/Contract_TestReport/workspace
+> mocha --reporter=xunit --require ./setup.js --timeout=100000 --recursive --delay ./test>api-test-reports.xml
+
+npm ERR! Test failed.  See above for more details.
++ true
++ sed -i /Mocha Tests/,$!d api-test-reports.xml
++ sed -i /\/testsuite/,$d api-test-reports.xml
++ echo </testsuite>
++ echo Process completed
+Process completed
+Recording test results
+Build step 'Publish JUnit test result report' changed build result to UNSTABLE
+Finished: UNSTABLE
