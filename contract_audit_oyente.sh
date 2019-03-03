@@ -16,14 +16,14 @@ done
 
 # Running oyente docker container from jenkins where volume pointed to hostmachine volume
 # when docker command is executed from jenkins, it tries to look for the file paths(volume path here) present in host machine.
-docker run -d  -it --name oyente -v /home/ledgerappuser/jenkinshome/workspace/Contract_Audit_Oyente/contracts:/tmp qspprotocol/oyente-0.4.24
+docker run -d  -it --name oyente -v HOSTPATH/contract_audit_oyente/workspace/contracts:/tmp qspprotocol/oyente-0.4.24
 
 # passing the file name to docker oyente for execution.
 for file in *; do 
     if [ -f "$file" ]; then 
         echo "$file" 
 
-        docker exec -t oyente bash -c 'cd /oyente/oyente && python oyente.py -s /tmp/'$file >> ../oyentelogs.txt 2>&1 || true
+        docker exec -t oyente bash -c 'cd /oyente/oyente && python oyente.py -s /tmp/'$file >> ../logs.txt 2>&1 || true
 
     fi 
 done
