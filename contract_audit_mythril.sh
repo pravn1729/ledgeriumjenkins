@@ -16,10 +16,10 @@ done
 
 for file in *; do 
     if [ -f "$file" ]; then 
-        echo "$file" 
-        docker run --name mythril -v /home/ledgerappuser/jenkinshome/workspace/Contract_Audit_Mythril/contracts:/tmp mythril/myth -x /tmp/"$file" || true
+        echo "****$file****" >> logs.txt
+        docker run --name mythril -v HOSTPATH/contract_audit_mythril/workspace/contracts:/tmp mythril/myth -x /tmp/"$file" || true
         
-        docker logs mythril || true
+        docker logs mythril >> logs.txt || true
         
         docker rm -f mythril || true
     fi 
