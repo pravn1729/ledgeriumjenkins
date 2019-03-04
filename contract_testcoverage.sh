@@ -48,5 +48,5 @@ sed -i '/\/testsuite/,$d' api-test-reports.xml
 # echo '</testsuite>' >> api-test-reports.xml
 echo &apos;&lt;/testsuite&gt;&apos; &gt;&gt; api-test-reports.xml
 
-cp api-test-reports.xml logs.txt
+cp api-test-reports.xml ../logs.txt
 echo "Process completed"
