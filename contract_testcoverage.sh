@@ -24,7 +24,7 @@ docker network create -d bridge --subnet 172.16.239.0/24 --gateway 172.16.239.1 
 docker network create -d bridge --subnet 172.19.240.0/24 --gateway 172.19.240.1 test_net || true
 
 
-sed -i "s@\'\./@HOSTPATH/contract_testcoverage/workspace/output/@g" docker-compose.yml
+sed -i "s@'\./@HOSTPATH/contract_testcoverage/workspace/output/@g" docker-compose.yml
 docker-compose up -d || true
 
 cd ..
