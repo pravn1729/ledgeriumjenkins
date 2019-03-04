@@ -9,7 +9,8 @@ for file in *; do
         sed -i 's/0.5.1/0.4.24/g' $file
     fi 
 done
-cd ..
+
+cd ../output
 
 # node setup
 # Cleaning up the docker setup
@@ -21,6 +22,8 @@ docker network create -d bridge --subnet 172.19.240.0/24 --gateway 172.19.240.1 
 docker-compose down || true
 
 docker-compose up -d || true
+
+cd ..
 
 sed -i 's/version": "1.0/version": "1.0.0/g' package.json
 
