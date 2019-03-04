@@ -15,12 +15,16 @@ cd ../output
 # node setup
 # Cleaning up the docker setup
 docker volume prune -f || true
+docker-compose down || true
+
+docker network rm app_net || true
+docker network rm test_net || true
 
 docker network create -d bridge --subnet 172.16.239.0/24 --gateway 172.16.239.1 app_net || true
 docker network create -d bridge --subnet 172.19.240.0/24 --gateway 172.19.240.1 test_net || true
 
-docker-compose down || true
 
+sed -i "s@./@HOSTPATH/Contract_TestReportworkspace/output/@g" docker-compose.yml
 docker-compose up -d || true
 
 cd ..
